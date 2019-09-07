@@ -1,0 +1,196 @@
+{
+  "days": [
+    {
+      "id": 1,
+      "name": "Segunda - 26/08 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
+    },
+    {
+      "id": 2,
+      "name": "Quarta - 28/08 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
+    },
+    {
+      "id": 3,
+      "name": "Sexta - 30/08 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
+    }
+  ],
+  "foods": [
+    {
+      "id": 1,
+      "name": "Assados",
+      "data": [
+        {
+          "id": 1,
+          "image": "https://www.revide.com.br/media/upload/noticias/2019/05/17/14/18/coxinha-4161592_960_720.jpeg",
+          "name": "Esfirra de Carne",
+          "description": "Carne de boi e Bacon",
+          "category": "Assados"
+        },
+        {
+          "id": 2,
+          "image": "https://site-amb-s3.clubedaana.com.br/prod/imagens/receita/22970/verdadeiroscroquetesdebotecocarnedepanela-30928.jpg",
+          "name": "Esfirra de Frango",
+          "description": "Frango, Queijo",
+          "category": "Assados"
+        },
+        {
+          "id": 3,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJah0JkWVjD4WALJ1xzcL5L_8zN9PqOadwJ11OqtKoA6-Sx6nH",
+          "name": "Pão de Queijo",
+          "description": "Queijo",
+          "category": "Assados"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Fritos",
+      "data": [
+        {
+          "id": 1,
+          "image": "https://www.revide.com.br/media/upload/noticias/2019/05/17/14/18/coxinha-4161592_960_720.jpeg",
+          "name": "Coxinha de Frango",
+          "description": "Frango",
+          "category": "Fritos"
+        },
+        {
+          "id": 2,
+          "image": "https://site-amb-s3.clubedaana.com.br/prod/imagens/receita/22970/verdadeiroscroquetesdebotecocarnedepanela-30928.jpg",
+          "name": "Croquete",
+          "description": "Carne de boi",
+          "category": "Fritos"
+        },
+        {
+          "id": 3,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJah0JkWVjD4WALJ1xzcL5L_8zN9PqOadwJ11OqtKoA6-Sx6nH",
+          "name": "Pão de Queijo",
+          "description": "Queijo",
+          "category": "Fritos"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Pequeno Almoco",
+      "data": [
+        {
+          "id": 1,
+          "image": "https://www.revide.com.br/media/upload/noticias/2019/05/17/14/18/coxinha-4161592_960_720.jpeg",
+          "name": "Croissant misto",
+          "description": "Frando, Queijo",
+          "category": "Pequeno Almoco"
+        },
+        {
+          "id": 2,
+          "image": "https://site-amb-s3.clubedaana.com.br/prod/imagens/receita/22970/verdadeiroscroquetesdebotecocarnedepanela-30928.jpg",
+          "name": "Croquete",
+          "description": "Frando, Queijo",
+          "category": "Pequeno Almoco"
+        },
+        {
+          "id": 3,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJah0JkWVjD4WALJ1xzcL5L_8zN9PqOadwJ11OqtKoA6-Sx6nH",
+          "name": "Pão de Queijo",
+          "description": "Queijo",
+          "category": "Pequeno Almoco"
+        }
+      ]
+    }
+  ],
+  "drinks": [
+    {
+      "id": 1,
+      "name": "Refrigerantes",
+      "data": [
+        {
+          "id": 1,
+          "image": "https://drogariasp.vteximg.com.br/arquivos/ids/283705-500-500/coca-cola-220ml-spal-Drogaria-SP-641707.jpg?v=636519743001570000",
+          "name": "Coca-cola",
+          "description": "350 ml",
+          "category": "Com Gás"
+        },
+        {
+          "id": 2,
+          "image": "https://rechlanches.com.br/wp-content/uploads/2017/05/fanta-1-600x600.jpg",
+          "name": "Fanta Laranja",
+          "description": "350 ml",
+          "category": "Com Gás"
+        },
+        {
+          "id": 3,
+          "image": "https://media.continente.pt/Sonae.eGlobal.Presentation.Web.Media/media.axd?resourceSearchType=2&resource=ProductId=6328491(eCsf$RetekProductCatalog$MegastoreContinenteOnline$Continente)&siteId=1&channelId=1&width=512&height=512&defaultOptions=1",
+          "name": "Copal Limão",
+          "description": "350 ml",
+          "category": "Com Gás"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Sumos",
+      "data": [
+        {
+          "id": 1,
+          "image": "https://drogariasp.vteximg.com.br/arquivos/ids/283705-500-500/coca-cola-220ml-spal-Drogaria-SP-641707.jpg?v=636519743001570000",
+          "name": "Coca-cola",
+          "description": "350 ml",
+          "category": "Sumos"
+        },
+        {
+          "id": 2,
+          "image": "https://rechlanches.com.br/wp-content/uploads/2017/05/fanta-1-600x600.jpg",
+          "name": "Fanta Laranja",
+          "description": "350 ml",
+          "category": "Sumos"
+        },
+        {
+          "id": 3,
+          "image": "https://media.continente.pt/Sonae.eGlobal.Presentation.Web.Media/media.axd?resourceSearchType=2&resource=ProductId=6328491(eCsf$RetekProductCatalog$MegastoreContinenteOnline$Continente)&siteId=1&channelId=1&width=512&height=512&defaultOptions=1",
+          "name": "Copal Limão",
+          "description": "350 ml",
+          "category": "Sumos"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Sumo Natural",
+      "data": [
+        {
+          "id": 1,
+          "image": "https://luardograjau.com.br/wp-content/uploads/2018/10/SUCO-DE-LARANJA.png",
+          "name": "Sumo de Laranja",
+          "description": "300 ml",
+          "category": "Sumo Natural"
+        },
+        {
+          "id": 2,
+          "image": "https://www.pontodiario.com/wp-content/uploads/2017/01/suco-de-lim%C3%A3o-%C3%A9-bom-300x300.jpg",
+          "name": "Sumo de Limão",
+          "description": "300 ml",
+          "category": "Sumo Natural"
+        }
+      ]
+    }
+  ],
+  "user": {
+    "id": 1,
+    "name": "Luiz Felipe Castro",
+    "days": 8,
+    "plan": "triplo",
+    "planName": "2 Snack + 1 Bebida",
+    "avatar": "https://avatars0.githubusercontent.com/u/19980927?v=4",
+    "city": "Lisboa"
+  }
+}
