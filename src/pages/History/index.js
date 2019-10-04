@@ -1,7 +1,16 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, HeaderContainer,  HeaderName } from './styles';
 
-const History = () => <Container />;
+const History = () => {
+
+  return (
+    <Container >
+      <HeaderContainer>
+        <HeaderName>Histórico</HeaderName>
+      </HeaderContainer>
+    </Container>
+)
+};
 
 export default History;

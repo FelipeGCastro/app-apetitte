@@ -8,7 +8,7 @@ background: ${colors.blue};
 justify-content: flex-start;
 align-items: center;
 padding: 0 10px;
-elevation: 5;
+elevation: 2;
 `;
 export const BackButton = styled.TouchableOpacity.attrs({
   activeOpacite: 0.7,

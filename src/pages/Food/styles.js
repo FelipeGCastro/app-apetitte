@@ -5,10 +5,12 @@ export const Container = styled.View`
   flex: 1;
   background: ${colors.background};
 `;
-export const FoodListContainer = styled.FlatList``;
+export const FoodListContainer = styled.FlatList`
+  padding-top: 20px; 
+  `;
 
 export const FoodContainer = styled.View`
-  margin-top: 20px;
+  margin-bottom: 20px;
 `;
 export const FoodCategory = styled.Text`
   color: #fff;

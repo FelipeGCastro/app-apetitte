@@ -14,34 +14,71 @@ export function* init() {
   }
 }
 
+
 export function* checkDays({ dayId, productIndex }) {
   try {
     const { days } = store.getState().days;
-    console.tron.log(days, dayId, productIndex, 'dia escolhido');
+    const { user } = store.getState().user;
     const checkDay = days.filter((day) => day.id === dayId)[0];
-    switch (productIndex) {
-      case 'snack1':
-        if (checkDay.snack2 && checkDay.drink) {
-          yield put(UserActions.downDays());
-          console.tron.log('Tirou Dia, snack1');
-        }
-        break;
-      case 'snack2':
-        if (checkDay.snack1 && checkDay.drink) {
-          yield put(UserActions.downDays());
-          console.tron.log('Tirou Dia, snack2');
-        }
-        break;
-      case 'drink':
-        if (checkDay.snack1 && checkDay.snack2) {
-          yield put(UserActions.downDays());
-          console.tron.log('Tirou Dia, drink');
-        }
-        break;
+    if (user.days > 0) {
+      switch (productIndex) {
+        case 'snack1':
+          if (user.plan === 'triplo') {
+            if (checkDay.snack2 && checkDay.drink) {
+              yield put(UserActions.downDays());
+              console.tron.log('Tirou Dia, snack1');
+            }
+          } else if (user.plan === 'duplo') {
+            if (checkDay.drink) {
+              yield put(UserActions.downDays());
+              console.tron.log('Tirou Dia, snack1');
+            }
+          } else if (user.plan === 'duploSingle') {
+            if (checkDay.snack2) {
+              yield put(UserActions.downDays());
+              console.tron.log('Tirou Dia, snack1');
+            }
+          }
+          break;
+        case 'snack2':
+          if (user.plan === 'triplo') {
+            if (checkDay.snack1 && checkDay.drink) {
+              yield put(UserActions.downDays());
+              console.tron.log('Tirou Dia, snack2');
+            }
+          } else if (user.plan === 'duplo') {
+            if (checkDay.drink) {
+              console.tron.log('Não deveria aparecer isso! duplo snack2');
+            }
+          } else if (user.plan === 'duploSingle') {
+            if (checkDay.snack1) {
+              yield put(UserActions.downDays());
+              console.tron.log('Tirou Dia, snack2');
+            }
+          }
+          break;
+        case 'drink':
+          if (user.plan === 'triplo') {
+            if (checkDay.snack1 && checkDay.snack2) {
+              yield put(UserActions.downDays());
+              console.tron.log('Tirou Dia, snack1');
+            }
+          } else if (user.plan === 'duplo') {
+            if (checkDay.snack1) {
+              yield put(UserActions.downDays());
+              console.tron.log('Tirou Dia, snack1');
+            }
+          } else if (user.plan === 'duploSingle') {
+            if (checkDay.snack2) {
+              console.tron.log('Isso não deveria aparecer, duplosingle drink');
+            }
+          }
+          break;
 
-      default:
-        console.tron.log('Algum erro ao tirar dias');
-        break;
+        default:
+          console.tron.log('Algum erro ao tirar dias');
+          break;
+      }
     }
   } catch (err) {
     console.tron.log(err, 'caiu erro ao diminuir');
@@ -80,3 +117,4 @@ export function* checkDaysUp({ dayId, productIndex }) {
     console.tron.log(err, 'caiu erro ao diminuir');
   }
 }
+

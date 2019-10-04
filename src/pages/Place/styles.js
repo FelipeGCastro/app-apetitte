@@ -9,12 +9,12 @@ export const Container = styled.View`
   padding: 40px 0;
 `;
 export const PageText = styled.Text`
-  width: 80%;
-  font-size: 30px;
+  width: 90%;
+  font-size: 35px;
   color: #fff;
   font-family: 'gomarice_usuazi_hosomozi';
   text-align: center;
-  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+
 `;
 export const FlatListContainer = styled.View`
   justify-content: center;
@@ -32,7 +32,7 @@ export const PlaceBox = styled.View`
   background: #74AAE4;
   align-items: center;
   justify-content: flex-start;
-  elevation: 5;
+  elevation: 2;
   margin: 0 15px;
   align-self: center;
 `;
@@ -44,7 +44,7 @@ export const PlaceName = styled.Text`
   font-size: 35px;
   color: #fff;
   font-family: 'gomarice_usuazi_hosomozi';
-  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+
   margin-top: 7px;
 `;
 export const PlaceDays = styled.Text`
@@ -52,14 +52,14 @@ export const PlaceDays = styled.Text`
   font-size: 22px;
   color: #fff;
   font-family: 'gomarice_usuazi_hosomozi';
-  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+
 `;
 export const PlaceHours = styled.Text`
   margin-top: 5px;
   font-size: 22px;
   color: #fff;
   font-family: 'gomarice_usuazi_hosomozi';
-  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+
   margin-bottom: 7px;
 `;
 export const PlaceCheckButton = styled.TouchableOpacity`
@@ -74,13 +74,13 @@ export const NextButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   background: #71DFD3;
-  elevation: 5;
+  elevation: 2;
 `;
 export const NextButtonText = styled.Text`
   font-size: 35px;
   color: #fff;
   font-family: 'gomarice_usuazi_hosomozi';
-  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+
 `;
 
 export const FakeButton = styled.View`

@@ -113,7 +113,7 @@ export const ChangePackage = styled.TouchableOpacity.attrs({
   padding: 15px;
   margin:10px;
   width: 150px;
-  elevation: 5;
+  elevation: 2;
   background: ${colors.blue}
   `;
 export const ChangeText = styled.Text`
@@ -132,7 +132,7 @@ export const PackageCancel = styled.TouchableOpacity.attrs({
   align-items: center;
   padding: 15px;
   margin:10px;
-  elevation: 5;
+  elevation: 2;
   background: ${colors.blue}
   `;
 export const CancelText = styled.Text`
@@ -189,7 +189,7 @@ export const ChangePayment = styled.TouchableOpacity.attrs({
   padding: 15px;
   margin:10px;
   width: 150px;
-  elevation: 5;
+  elevation: 2;
   background: ${colors.blue}
   `;
 export const ChangeTextPayment = styled.Text`
@@ -208,7 +208,7 @@ export const PaymentCancel = styled.TouchableOpacity.attrs({
   align-items: center;
   margin:10px;
   padding: 15px;
-  elevation: 5;
+  elevation: 2;
   background: ${colors.blue}
   `;
 

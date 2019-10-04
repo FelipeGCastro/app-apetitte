@@ -12,7 +12,7 @@ background: ${colors.blue};
 justify-content: center;
 align-items: center;
 padding: 0 10px;
-elevation: 5;
+elevation: 2;
 `;
 export const HeaderName = styled.Text`
 color: #fff;

@@ -23,6 +23,78 @@
       "snack1": null,
       "snack2": null,
       "drink": null
+    },
+    {
+      "id": 4,
+      "name": "Segunda - 02/09 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
+    },
+    {
+      "id": 5,
+      "name": "Quarta - 04/09 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
+    },
+    {
+      "id": 6,
+      "name": "Sexta - 6/09 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
+    },
+    {
+      "id": 7,
+      "name": "Segunda - 9/09 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
+    },
+    {
+      "id": 8,
+      "name": "Quarta - 11/09 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
+    },
+    {
+      "id": 9,
+      "name": "Sexta - 13/09 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
+    },
+    {
+      "id": 10,
+      "name": "Segunda - 16/09 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
+    },
+    {
+      "id": 11,
+      "name": "Quarta - 18/09 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
+    },
+    {
+      "id": 12,
+      "name": "Sexta - 20/09 - Manhã",
+      "plan": "triplo",
+      "snack1": null,
+      "snack2": null,
+      "drink": null
     }
   ],
   "foods": [
@@ -190,6 +262,7 @@
     "days": 8,
     "plan": "triplo",
     "planName": "2 Snack + 1 Bebida",
+    "expireDate": "22/09",
     "avatar": "https://avatars0.githubusercontent.com/u/19980927?v=4",
     "city": "Lisboa"
   }

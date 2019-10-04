@@ -1,6 +1,5 @@
 import { createReducer, createActions } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
-import UserActions from '~/store/ducks/user';
 
 /* Types & Action Creators */
 
