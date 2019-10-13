@@ -1,9 +1,11 @@
 import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
+import { colors } from '~/styles';
+
 
 export const Container = styled.View`
   flex: 1;
-  background: #74AAE4;
+  background: ${colors.background};
   justify-content: space-between;
   align-items: center;
   padding: 40px 0;
@@ -23,13 +25,15 @@ export const FlatListContainer = styled.View`
 `
 export const FrequencyContainer = styled.FlatList`
 `
-export const FrequencyBox = styled.View`
+export const FrequencyBox = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.9,
+})`
   width: ${Dimensions.get('window').width / 1.5}px;
   height: ${Dimensions.get('window').width / 1.24}px;
   border-color: ${(props) => (props.checked ? '#71DFD3' : '#fff')} ;
   border-style: solid;
   border-width: 1px;
-  background: #74AAE4;
+  background: ${colors.background};
   align-items: center;
   justify-content: flex-start;
   elevation: 2;
@@ -67,7 +71,9 @@ export const NextButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   background: #71DFD3;
-  elevation: 2;
+
+  elevation: 5;
+  border-radius: 4;
 `;
 export const NextButtonText = styled.Text`
   font-size: 35px;
@@ -77,7 +83,7 @@ export const NextButtonText = styled.Text`
 `;
 
 export const FakeButton = styled.View`
-  height: 50px;
+  height: 40px;
 `;
 export const PointsContainer = styled.View`
   height: 30px;

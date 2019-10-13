@@ -1,9 +1,10 @@
 import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
+import { colors } from '~/styles';
 
 export const Container = styled.View`
   flex: 1;
-  background: #74AAE4;
+  background: ${colors.background};
   justify-content: space-between;
   align-items: center;
   padding: 40px 0;
@@ -23,22 +24,27 @@ export const FlatListContainer = styled.View`
 `
 export const PlaceContainer = styled.FlatList`
 `
-export const PlaceBox = styled.View`
+export const PlaceBox = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.9,
+})`
   width: ${Dimensions.get('window').width / 1.5}px;
   height: ${Dimensions.get('window').width / 1.24}px;
   border-color: ${(props) => (props.checked ? '#71DFD3' : '#fff')} ;
   border-style: solid;
-  border-width: 1px;
-  background: #74AAE4;
+  border-width: 2px;
+  background: ${colors.background};
   align-items: center;
   justify-content: flex-start;
   elevation: 2;
   margin: 0 15px;
   align-self: center;
+  border-radius: 8;
 `;
 export const PlaceImage = styled.Image`
   width: 100%;
   height: ${Dimensions.get('window').width / 2}px;
+  border-top-left-radius: 8;
+  border-top-right-radius: 8;
 `;
 export const PlaceName = styled.Text`
   font-size: 35px;
@@ -68,21 +74,7 @@ export const PlaceCheckButton = styled.TouchableOpacity`
   right: 5;
 `;
 
-export const NextButton = styled.TouchableOpacity`
-  width: ${Dimensions.get('window').width / 1.5}px;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-  background: #71DFD3;
-  elevation: 2;
-`;
-export const NextButtonText = styled.Text`
-  font-size: 35px;
-  color: #fff;
-  font-family: 'gomarice_usuazi_hosomozi';
-
-`;
 
 export const FakeButton = styled.View`
-  height: 50px;
+  height: 40px;
 `;

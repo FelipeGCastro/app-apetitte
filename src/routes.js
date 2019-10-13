@@ -6,8 +6,8 @@ import Place from '~/pages/Place';
 import Frequency from '~/pages/Frequency';
 
 const Routes = createAppContainer(createSwitchNavigator({
-  Menu,
   Main,
+  Menu,
   Frequency,
   Place,
 }));

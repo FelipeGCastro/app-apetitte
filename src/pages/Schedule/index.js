@@ -118,6 +118,7 @@ class Schedule extends Component {
         <ScheduleContainer
           data={days}
           showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
           keyExtractor={(day) => day.id.toString()}
           renderItem={this.renderItem}
         />

@@ -4,6 +4,8 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import coxinha from '~/assets/coxinha.jpg';
 import croquete from '~/assets/croquete.jpg';
 import paodequeijo from '~/assets/paodequeijo.jpg';
+
+import ButtonNext from '~/components/ButtonNext'
 import {
   Container,
   PageText,
@@ -68,23 +70,15 @@ export default class Frequency extends Component {
   renderItem= ({ item }) => {
     const { checked } = this.state;
     return (
-      <FrequencyBox checked={checked === item.id ? true : null }>
+      <FrequencyBox
+        onPress={() => this.handleCheckFrequency(item)}
+        checked={checked === item.id ? true : null }>
         <FrequencyImage source={item.image} resizeMode="cover" />
         <FrequencyDays>{item.days}</FrequencyDays>
         <FrequencyDescription>{item.description}</FrequencyDescription>
         <PointsContainer>
           <PointsText>Ganhe {item.points} Pontos</PointsText>
         </PointsContainer>
-        <FrequencyCheckButton onPress={() => this.handleCheckFrequency(item)}>
-          { checked === item.id
-            ? (
-              <Icon name="checkcircle" size={35} color="#71DFD3" />
-            )
-            : (
-              <Icon name="pluscircleo" size={35} color="#fff" />
-            )
-              }
-        </FrequencyCheckButton>
       </FrequencyBox>
     );
   };
@@ -103,11 +97,7 @@ export default class Frequency extends Component {
             renderItem={this.renderItem}
           />
         </FlatListContainer>
-        {checked ? (
-          <NextButton onPress={this.handleNextPress}>
-            <NextButtonText>Próximo</NextButtonText>
-          </NextButton>
-        )
+        {checked ? <ButtonNext onPressFunction={this.handleNextPress} />
           : <FakeButton />
         }
       </Container>

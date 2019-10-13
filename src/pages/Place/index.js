@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 import colombo from '~/assets/colombo.jpg';
 import atrium from '~/assets/atrium-saldanha.jpg';
+import ButtonNext from '~/components/ButtonNext'
 import {
   Container,
   PageText,
@@ -14,8 +15,6 @@ import {
   PlaceDays,
   PlaceHours,
   PlaceCheckButton,
-  NextButton,
-  NextButtonText,
   FakeButton,
 } from './styles';
 
@@ -67,21 +66,13 @@ export default class Place extends Component {
   renderItem= ({ item }) => {
     const { checked } = this.state;
     return (
-      <PlaceBox checked={checked === item.id ? true : null }>
+      <PlaceBox
+        onPress={() => this.handleCheckPlace(item)}
+        checked={checked === item.id ? true : null }>
         <PlaceImage source={item.image} resizeMode="cover" />
         <PlaceName>{item.name}</PlaceName>
         <PlaceDays>{item.days}</PlaceDays>
         <PlaceHours>{item.hours}</PlaceHours>
-        <PlaceCheckButton onPress={() => this.handleCheckPlace(item)}>
-          { checked === item.id
-            ? (
-              <Icon name="checkcircle" size={35} color="#71DFD3" />
-            )
-            : (
-              <Icon name="pluscircleo" size={35} color="#fff" />
-            )
-              }
-        </PlaceCheckButton>
       </PlaceBox>
     );
   };
@@ -101,16 +92,12 @@ export default class Place extends Component {
           />
         </FlatListContainer>
         {checked ? (
-          <NextButton onPress={this.handleNextPress}>
-            <NextButtonText>Próximo</NextButtonText>
-          </NextButton>
+          <ButtonNext onPressFunction={this.handleNextPress} />
         )
-        :
-          <FakeButton />
+          : <FakeButton />
         }
 
       </Container>
     );
   }
 }
-
