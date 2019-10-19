@@ -1,25 +1,24 @@
 // import React from 'react';
 import {
   createAppContainer,
-  createStackNavigator,
-} from 'react-navigation';
+  createStackNavigator
+} from 'react-navigation'
 
-import TabNavigator from './menu';
-import Food from '~/pages/Food';
-import Drink from '~/pages/Drink';
-import { colors } from '~/styles';
-
+import TabNavigator from './menu'
+import Food from '~/pages/Food'
+import Drink from '~/pages/Drink'
+import { colors } from '~/styles'
 
 const products = createStackNavigator(
   {
     TabNavigator: {
       screen: TabNavigator,
       navigationOptions: {
-        header: null,
-      },
+        header: null
+      }
     },
     Food,
-    Drink,
+    Drink
   },
   {
     initialRouteName: 'TabNavigator',
@@ -27,10 +26,10 @@ const products = createStackNavigator(
     defaultNavigationOptions: {
       headerTitleStyle: {
         color: colors.textPrimary,
-        fontWeight: 'normal',
-      },
-    },
-  },
-);
+        fontWeight: 'normal'
+      }
+    }
+  }
+)
 
-export default createAppContainer(products);
+export default createAppContainer(products)

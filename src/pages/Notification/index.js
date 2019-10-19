@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 import {
   Container,
@@ -6,14 +6,13 @@ import {
   HeaderName,
   AlertContainer,
   AlertBox,
-  AlertText,
-} from './styles';
-
+  AlertText
+} from './styles'
 
 export default class Notification extends Component {
   componentDidMount = () => {}
 
-  render() {
+  render () {
     return (
       <Container>
         <HeaderContainer>
@@ -24,11 +23,11 @@ export default class Notification extends Component {
             <AlertText>Aqui você verá suas notificacões
 sobre os seus pedidos, avisos e
 alertas. Fique atentos que grandes
-novidades estão por vir.</AlertText>
+novidades estão por vir.
+            </AlertText>
           </AlertBox>
         </AlertContainer>
       </Container>
-    );
+    )
   }
 }
-

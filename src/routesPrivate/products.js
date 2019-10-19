@@ -1,14 +1,13 @@
-import { createStackNavigator } from 'react-navigation';
-import { colors } from '~/styles';
+import { createStackNavigator } from 'react-navigation'
+import { colors } from '~/styles'
 
-
-import Food from '~/pages/Food';
-import Drink from '~/pages/Drink';
+import Food from '~/pages/Food'
+import Drink from '~/pages/Drink'
 
 const schedule = createStackNavigator(
   {
     Food,
-    Drink,
+    Drink
   },
   {
     // initialRouteName: 'Schedule',
@@ -16,10 +15,10 @@ const schedule = createStackNavigator(
     defaultNavigationOptions: {
       headerTitleStyle: {
         color: colors.textPrimary,
-        fontWeight: 'normal',
-      },
-    },
-  },
-);
+        fontWeight: 'normal'
+      }
+    }
+  }
+)
 
-export default schedule;
+export default schedule

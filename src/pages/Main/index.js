@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import logo from '~/assets/logo.png';
-import { colors } from '~/styles';
+import React, { Component } from 'react'
+import logo from '~/assets/logo.png'
+import { colors } from '~/styles'
 
 import {
   Container,
@@ -13,13 +13,13 @@ import {
   ForgotPasswordButton,
   ForgotPasswordText,
   SignUpButton,
-  SignUpLink,
-} from './styles';
+  SignUpLink
+} from './styles'
 
 export default class Main extends Component {
   state={
     email: '',
-    password: null,
+    password: null
   }
 
   nextPagine = () => {
@@ -35,36 +35,36 @@ export default class Main extends Component {
     this.setState({ password })
   }
 
-  render() {
-    const { email, password } = this.state;
+  render () {
+    const { email, password } = this.state
     return (
       <Container>
-        <LogoImage source={logo} resizeMode="contain" />
+        <LogoImage source={logo} resizeMode='contain' />
         <EmailInput
           value={email}
           onChangeText={this.handleEmailChange}
-          autoCapitalize="words"
+          autoCapitalize='words'
           autoCorrect={false}
-          placeholder="E-mail"
-          textContentType="emailAddress"
-          returnKeyType="next"
+          placeholder='E-mail'
+          textContentType='emailAddress'
+          returnKeyType='next'
           onSubmitEditing={() => this.password.focus()}
-          keyboardType="email-address"
+          keyboardType='email-address'
           autoFocus={false}
           blurOnSubmit={false}
           placeholderTextColor={colors.softGray}
         />
         <PasswordInput
           ref={(input) => {
-            this.password = input;
+            this.password = input
           }}
           value={password}
           onChangeText={this.handlePasswordChange}
           autoCorrect={false}
-          placeholder="Palavra-passe"
-          textContentType="password"
+          placeholder='Palavra-passe'
+          textContentType='password'
           secureTextEntry
-          returnKeyType="next"
+          returnKeyType='next'
           onSubmitEditing={() => this.passwordConfirmation.focus()}
           autoFocus={false}
           blurOnSubmit={false}
@@ -82,7 +82,7 @@ export default class Main extends Component {
           </SignUpButton>
         </LinksContainer>
       </Container>
-    );
+    )
   }
 }
 

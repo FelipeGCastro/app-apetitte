@@ -1,6 +1,6 @@
-import styled from 'styled-components/native';
-import { Dimensions } from 'react-native';
-import { colors } from '~/styles';
+import styled from 'styled-components/native'
+import { Dimensions } from 'react-native'
+import { colors } from '~/styles'
 
 export const Container = styled.View`
   flex: 1;
@@ -8,7 +8,7 @@ export const Container = styled.View`
   justify-content: space-between;
   align-items: center;
   padding: 40px 0;
-`;
+`
 export const PageText = styled.Text`
   width: 90%;
   font-size: 35px;
@@ -16,7 +16,7 @@ export const PageText = styled.Text`
   font-family: 'gomarice_usuazi_hosomozi';
   text-align: center;
 
-`;
+`
 export const FlatListContainer = styled.View`
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@ export const FlatListContainer = styled.View`
 export const PlaceContainer = styled.FlatList`
 `
 export const PlaceBox = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.9,
+  activeOpacity: 0.9
 })`
   width: ${Dimensions.get('window').width / 1.5}px;
   height: ${Dimensions.get('window').width / 1.24}px;
@@ -39,27 +39,27 @@ export const PlaceBox = styled.TouchableOpacity.attrs({
   margin: 0 15px;
   align-self: center;
   border-radius: 8;
-`;
+`
 export const PlaceImage = styled.Image`
   width: 100%;
   height: ${Dimensions.get('window').width / 2}px;
   border-top-left-radius: 8;
   border-top-right-radius: 8;
-`;
+`
 export const PlaceName = styled.Text`
   font-size: 35px;
   color: #fff;
   font-family: 'gomarice_usuazi_hosomozi';
 
   margin-top: 7px;
-`;
+`
 export const PlaceDays = styled.Text`
   margin-top: 5px;
   font-size: 22px;
   color: #fff;
   font-family: 'gomarice_usuazi_hosomozi';
 
-`;
+`
 export const PlaceHours = styled.Text`
   margin-top: 5px;
   font-size: 22px;
@@ -67,14 +67,13 @@ export const PlaceHours = styled.Text`
   font-family: 'gomarice_usuazi_hosomozi';
 
   margin-bottom: 7px;
-`;
+`
 export const PlaceCheckButton = styled.TouchableOpacity`
   position: absolute;
   bottom: 5;
   right: 5;
-`;
-
+`
 
 export const FakeButton = styled.View`
   height: 40px;
-`;
+`

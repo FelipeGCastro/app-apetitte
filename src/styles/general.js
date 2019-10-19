@@ -1,11 +1,11 @@
-import colors from './colors';
+import colors from './colors'
 
 export const formStyles = {
   label: {
     fontSize: 14,
     fontWeight: 'bold',
     color: colors.lighter,
-    marginBottom: 5,
+    marginBottom: 5
   },
 
   input: {
@@ -16,9 +16,9 @@ export const formStyles = {
     height: 44,
     paddingHorizontal: 10,
     marginBottom: 20,
-    color: colors.white,
-  },
-};
+    color: colors.white
+  }
+}
 
 export const buttonStyles = {
   button: {
@@ -26,12 +26,12 @@ export const buttonStyles = {
     backgroundColor: colors.primary,
     borderRadius: 5,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
 
   buttonText: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: colors.white,
-  },
-};
+    color: colors.white
+  }
+}

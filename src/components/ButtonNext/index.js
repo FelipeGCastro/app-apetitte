@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { NextButton, NextButtonText } from './styles';
+import { NextButton, NextButtonText } from './styles'
 
 const ButtonNext = ({ onPressFunction }) => {
   return (
@@ -8,6 +8,6 @@ const ButtonNext = ({ onPressFunction }) => {
       <NextButtonText>Próximo</NextButtonText>
     </NextButton>
   )
-};
+}
 
-export default ButtonNext;
+export default ButtonNext

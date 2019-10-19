@@ -1,17 +1,15 @@
 /* eslint-disable no-nested-ternary */
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import DaysActions from '~/store/ducks/days';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import DaysActions from '~/store/ducks/days'
 
-import Triplo from './Triplo';
-import Duplo from './Duplo';
-import DuploSingle from './DuploSingle';
-
-
+import Triplo from './Triplo'
+import Duplo from './Duplo'
+import DuploSingle from './DuploSingle'
 
 import {
   Container,
@@ -21,12 +19,12 @@ import {
   ExpireContainer,
   ExpireText,
   ExpireDate,
-  ScheduleContainer,
-} from './styles';
+  ScheduleContainer
+} from './styles'
 
 class Schedule extends Component {
   static navigationOptions = {
-    header: null,
+    header: null
   };
 
   // state = {
@@ -34,34 +32,32 @@ class Schedule extends Component {
   // };
 
   componentDidMount = async () => {
-    const { loadRequest } = this.props;
-    await loadRequest();
+    const { loadRequest } = this.props
+    await loadRequest()
   }
 
   handleFoodPress = (dayId, productIndex) => {
-    const { navigation, user } = this.props;
+    const { navigation, user } = this.props
     if (user.days !== 0) {
-      navigation.navigate('Food', { productIndex, dayId });
+      navigation.navigate('Food', { productIndex, dayId })
     }
   }
 
   handleDrinkPress = (dayId, productIndex) => {
-    const { navigation, user } = this.props;
+    const { navigation, user } = this.props
     if (user.days !== 0) {
-      navigation.navigate('Drink', { productIndex, dayId });
+      navigation.navigate('Drink', { productIndex, dayId })
     }
-
   }
 
   handleRemoveProduct = async (dayId, productIndex) => {
-    const { removeProduct } = this.props;
-    await removeProduct(dayId, productIndex);
+    const { removeProduct } = this.props
+    await removeProduct(dayId, productIndex)
   }
 
-
   renderItem = ({ item }) => {
-    const { user } = this.props;
-    let dayContainer;
+    const { user } = this.props
+    let dayContainer
     switch (user.plan) {
       case 'triplo':
         dayContainer = (
@@ -72,8 +68,8 @@ class Schedule extends Component {
             handleDrinkPress={this.handleDrinkPress}
             handleRemoveProduct={this.handleRemoveProduct}
           />
-        );
-        break;
+        )
+        break
       case 'duplo':
         dayContainer = (
           <Duplo
@@ -83,10 +79,10 @@ class Schedule extends Component {
             handleDrinkPress={this.handleDrinkPress}
             handleRemoveProduct={this.handleRemoveProduct}
           />
-        );
-        break;
+        )
+        break
       case 'duploSingle':
-        dayContainer =(
+        dayContainer = (
           <DuploSingle
             item={item}
             user={user}
@@ -94,25 +90,25 @@ class Schedule extends Component {
             handleDrinkPress={this.handleDrinkPress}
             handleRemoveProduct={this.handleRemoveProduct}
           />
-        );
-        break;
+        )
+        break
 
       default:
-        break;
+        break
     }
-    return dayContainer;
+    return dayContainer
   }
 
-  render() {
-    const { days, user } = this.props;
+  render () {
+    const { days, user } = this.props
     return (
       <Container>
         <HeaderContainer>
           <HeaderName>Calendário</HeaderName>
-          <PackageDays>{ user.days } Dias</PackageDays>
+          <PackageDays>{user.days} Dias</PackageDays>
           <ExpireContainer>
             <ExpireText>Expira</ExpireText>
-            <ExpireDate>{ user.expireDate }</ExpireDate>
+            <ExpireDate>{user.expireDate}</ExpireDate>
           </ExpireContainer>
         </HeaderContainer>
         <ScheduleContainer
@@ -123,28 +119,28 @@ class Schedule extends Component {
           renderItem={this.renderItem}
         />
       </Container>
-    );
+    )
   }
 }
 
 Schedule.propTypes = {
   navigation: PropTypes.shape({
-    navigate: PropTypes.func.isRequired,
+    navigate: PropTypes.func.isRequired
   }).isRequired,
   loadRequest: PropTypes.func.isRequired,
   removeProduct: PropTypes.func.isRequired,
   days: PropTypes.array.isRequired,
-  user: PropTypes.oneOfType([ PropTypes.shape({}), PropTypes.array]).isRequired,
-};
+  user: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array]).isRequired
+}
 
 const mapStateToProps = (state) => ({
   days: state.days.days,
-  user: state.user.user,
-});
+  user: state.user.user
+})
 
-const mapDispatchToProps = (dispatch) => bindActionCreators(DaysActions, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators(DaysActions, dispatch)
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
-)(Schedule);
+  mapDispatchToProps
+)(Schedule)

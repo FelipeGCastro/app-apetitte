@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import Icon from 'react-native-vector-icons/Feather'
 
-import Icon from 'react-native-vector-icons/Feather';
-
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import UserActions from '~/store/ducks/user';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import UserActions from '~/store/ducks/user'
 
 import {
   Container,
@@ -35,24 +34,29 @@ import {
   PaymentMode,
   ChangePayment,
   ChangeTextPayment,
-  PaymentCancel,
-} from './styles';
+  PaymentCancel
+} from './styles'
 
 class Profile extends Component {
   componentDidMount = () => {}
 
-  render() {
-    const { user } = this.props;
+  handleLogoutPress = () => {
+    const { navigation } = this.props
+    navigation.navigate('Main')
+  }
+
+  render () {
+    const { user } = this.props
     return (
       <Container>
         <PageContainer>
           <HeaderContainer>
-            <SettingsButton>
-              <Icon name="settings" size={30} color="#fff" />
+            <SettingsButton onPress={this.handleLogoutPress}>
+              <Icon name='settings' size={30} color='#fff' />
             </SettingsButton>
             <ProfileContainer>
               <ImageContainer>
-                <Avatar source={{ uri: user.avatar }} resizeMode="cover" />
+                <Avatar source={{ uri: user.avatar }} resizeMode='cover' />
               </ImageContainer>
               <TextContainer>
                 <ProfileName>{user.name}</ProfileName>
@@ -93,18 +97,17 @@ class Profile extends Component {
           </PaymentContainer>
         </PageContainer>
       </Container>
-    );
+    )
   }
 }
 
-
 const mapStateToProps = (state) => ({
-  user: state.user.user,
-});
+  user: state.user.user
+})
 
-const mapDispatchToProps = (dispatch) => bindActionCreators(UserActions, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators(UserActions, dispatch)
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
-)(Profile);
+  mapDispatchToProps
+)(Profile)
