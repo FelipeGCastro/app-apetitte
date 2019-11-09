@@ -18,7 +18,7 @@ import {
   IconPlus
 } from './styles'
 
-const DuploSingle = ({ item, user, handleRemoveProduct, handleFoodPress }) => {
+const DuploSingle = ({ item, user, onRemoveProduct, onFoodPress }) => {
   const checkProducts = !!item.snack1 && !!item.snack2
     ? 'complete'
     : (!!item.snack1 || !!item.item.snack2)
@@ -56,14 +56,14 @@ const DuploSingle = ({ item, user, handleRemoveProduct, handleFoodPress }) => {
             ? (
               <Product
                 item={item}
-                handleRemoveProduct={handleRemoveProduct}
+                onRemoveProduct={onRemoveProduct}
                 name='snack1'
                 product={item.snack1}
               />
             )
             : (
               <ProductContainer>
-                <ProductBox onPress={() => handleFoodPress(item.id, 'snack1')}>
+                <ProductBox onPress={() => onFoodPress(item.id, 'snack1')}>
                   <AddText>Add</AddText>
                 </ProductBox>
                 <ProductName>Snack</ProductName>
@@ -78,7 +78,7 @@ const DuploSingle = ({ item, user, handleRemoveProduct, handleFoodPress }) => {
               <IconPlus name='plus' size={25} color='#fff' />
               <Product
                 item={item}
-                handleRemoveProduct={handleRemoveProduct}
+                onRemoveProduct={onRemoveProduct}
                 name='snack2'
                 product={item.snack2}
               />
@@ -88,7 +88,7 @@ const DuploSingle = ({ item, user, handleRemoveProduct, handleFoodPress }) => {
             <TriploContainer>
               <IconPlus name='plus' size={25} color='#fff' />
               <ProductContainer>
-                <ProductBox onPress={() => handleFoodPress(item.id, 'snack2')}>
+                <ProductBox onPress={() => onFoodPress(item.id, 'snack2')}>
                   <AddText>Add</AddText>
                 </ProductBox>
                 <ProductName>Snack</ProductName>
@@ -104,9 +104,9 @@ const DuploSingle = ({ item, user, handleRemoveProduct, handleFoodPress }) => {
 DuploSingle.propTypes = {
   item: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array]).isRequired,
   user: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array]).isRequired,
-  handleRemoveProduct: PropTypes.func.isRequired,
-  handleFoodPress: PropTypes.func.isRequired,
-  handleDrinkPress: PropTypes.func.isRequired
+  onRemoveProduct: PropTypes.func.isRequired,
+  onFoodPress: PropTypes.func.isRequired,
+  onDrinkPress: PropTypes.func.isRequired
 }
 
 export default DuploSingle

@@ -10,12 +10,12 @@ import {
   ProductName
 } from './styles'
 
-const Product = ({ item, handleRemoveProduct, name, product }) => (
+const Product = ({ item, onRemoveProduct, name, product }) => (
   <ProductContainer>
     <ProductImageBox>
       <ProductRemove
         hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
-        onPress={() => handleRemoveProduct(item.id, name)}
+        onPress={() => onRemoveProduct(item.id, name)}
       >
         <IconClose name='closecircle' size={30} color='#FF7777' />
       </ProductRemove>
@@ -26,7 +26,7 @@ const Product = ({ item, handleRemoveProduct, name, product }) => (
 )
 
 Product.propTypes = {
-  handleRemoveProduct: PropTypes.func.isRequired,
+  onRemoveProduct: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   item: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array]).isRequired,
   product: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array]).isRequired

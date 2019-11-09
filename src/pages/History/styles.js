@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { colors } from '~/styles'
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
   background: ${colors.background};
 `
@@ -17,6 +17,6 @@ elevation: 2;
 export const HeaderName = styled.Text`
 color: #fff;
 font-size: 30;
-font-family: 'gomarice_usuazi_hosomozi';
+font-family: 'Usuazi-Hosomozi';
 
 `

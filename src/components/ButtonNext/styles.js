@@ -1,9 +1,8 @@
 import styled from 'styled-components/native'
-import { Dimensions } from 'react-native'
 
 export const NextButton = styled.TouchableOpacity`
-  width: ${Dimensions.get('window').width / 1.5}px;
-  height: 40px;
+  margin: 0 20px;
+  height: 55px;
   justify-content: center;
   align-items: center;
   background: #71DFD3;
@@ -11,8 +10,8 @@ export const NextButton = styled.TouchableOpacity`
   border-radius: 8;
 `
 export const NextButtonText = styled.Text`
-  font-size: 25px;
+  font-size: 40px;
   color: #fff;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
 
 `

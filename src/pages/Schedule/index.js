@@ -64,9 +64,9 @@ class Schedule extends Component {
           <Triplo
             item={item}
             user={user}
-            handleFoodPress={this.handleFoodPress}
-            handleDrinkPress={this.handleDrinkPress}
-            handleRemoveProduct={this.handleRemoveProduct}
+            onFoodPress={this.handleFoodPress}
+            onDrinkPress={this.handleDrinkPress}
+            onRemoveProduct={this.handleRemoveProduct}
           />
         )
         break
@@ -75,9 +75,9 @@ class Schedule extends Component {
           <Duplo
             item={item}
             user={user}
-            handleFoodPress={this.handleFoodPress}
-            handleDrinkPress={this.handleDrinkPress}
-            handleRemoveProduct={this.handleRemoveProduct}
+            onFoodPress={this.handleFoodPress}
+            onDrinkPress={this.handleDrinkPress}
+            onRemoveProduct={this.handleRemoveProduct}
           />
         )
         break
@@ -86,9 +86,9 @@ class Schedule extends Component {
           <DuploSingle
             item={item}
             user={user}
-            handleFoodPress={this.handleFoodPress}
-            handleDrinkPress={this.handleDrinkPress}
-            handleRemoveProduct={this.handleRemoveProduct}
+            onFoodPress={this.handleFoodPress}
+            onDrinkPress={this.handleDrinkPress}
+            onRemoveProduct={this.handleRemoveProduct}
           />
         )
         break

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { colors } from '~/styles'
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
   background: ${colors.background};
 `
@@ -15,7 +15,7 @@ export const FoodContainer = styled.View`
 export const FoodCategory = styled.Text`
   color: #fff;
   font-size: 30;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   margin-left: 20px;
   margin-bottom: 10px;
 `
@@ -41,13 +41,13 @@ export const FoodImage = styled.Image`
 export const FoodName = styled.Text`
   color: #fff;
   font-size: 25;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   margin-top: 7px;
 `
 export const FoodDescription = styled.Text`
   color: #fff;
   font-size: 18;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   margin: 5px 0 20px 0;
 `
 export const AddButton = styled.TouchableOpacity`

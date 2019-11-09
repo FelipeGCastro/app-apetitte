@@ -1,12 +1,13 @@
 /* eslint-disable no-nested-ternary */
-import React from 'react'
-
+import React, { Component } from 'react'
+import { StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
 
 import Product from '../Product'
 
 import {
   DayContainer,
+  HeaderContainer,
   DayName,
   DayBox,
   DayStatus,
@@ -15,125 +16,135 @@ import {
   ProductBox,
   AddText,
   ProductName,
-  TriploContainer,
   IconPlus
 } from './styles'
 
-const Triplo = ({ item, user, handleRemoveProduct, handleFoodPress, handleDrinkPress }) => {
-  const checkProducts = !!item.snack1 && !!item.snack2 && !!item.drink
-    ? 'complete'
-    : (!!item.snack1 || !!item.snack2 || !!item.drink)
-      ? 'pending'
-      : (user.days === 0) &&
-      ('pending')
-  return (
-    <DayContainer>
-      <DayName>{item.name}</DayName>
+export default class Triplo extends Component {
+  static propTypes = {
+    item: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array])
+      .isRequired,
+    user: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array])
+      .isRequired,
+    onRemoveProduct: PropTypes.func.isRequired,
+    onFoodPress: PropTypes.func.isRequired,
+    onDrinkPress: PropTypes.func.isRequired
+  }
+
+  state = {
+    expanded: false
+  }
+
+  handleToggleExpand = () => {
+    const { expanded } = this.state
+    this.setState({ expanded: !expanded })
+  }
+
+  renderProductChooseSnack = (item, snackChoose) => {
+    const { onFoodPress } = this.props
+    return (
+      <ProductContainer>
+        <ProductBox onPress={() => onFoodPress(item.id, snackChoose)}>
+          <AddText>Add</AddText>
+        </ProductBox>
+        <ProductName>Snack</ProductName>
+      </ProductContainer>
+    )
+  }
+
+  renderProduct = (item, product, productItem) => {
+    const { onRemoveProduct } = this.props
+    return (
+      <Product
+        item={item}
+        onRemoveProduct={onRemoveProduct}
+        name={product}
+        product={productItem}
+      />
+    )
+  }
+
+  renderProductChooseDrink = item => {
+    const { onDrinkPress } = this.props
+    return (
+      <ProductContainer>
+        <ProductBox onPress={() => onDrinkPress(item.id, 'drink')}>
+          <AddText>Add</AddText>
+        </ProductBox>
+        <ProductName>Bebida</ProductName>
+      </ProductContainer>
+    )
+  }
+
+  renderLabelBox = (item, checkProducts) => {
+    const { user } = this.props
+    return !!item.snack1 && !!item.snack2 && !!item.drink ? (
+      <DayStatus status={checkProducts}>
+        <StatusText>Completo</StatusText>
+      </DayStatus>
+    ) : !!item.snack1 || !!item.snack2 || !!item.drink ? (
+      <DayStatus status={checkProducts}>
+        <StatusText>Falta Completar</StatusText>
+      </DayStatus>
+    ) : (
+      user.days === 0 && (
+        <DayStatus status={checkProducts}>
+          <StatusText>Acabou os seus dias</StatusText>
+        </DayStatus>
+      )
+    )
+  }
+
+  renderIconPlus = () => <IconPlus name='plus' size={25} color='#fff' />
+
+  renderProductContainer = (item, checkProducts) => {
+    // this.renderLabelBox(item, checkProducts)
+    return (
       <DayBox status={checkProducts}>
-
-        {
-          (!!item.snack1 && !!item.snack2 && !!item.drink)
-            ? (
-              <DayStatus status={checkProducts}>
-                <StatusText>Completo</StatusText>
-              </DayStatus>
-            )
-            : (!!item.snack1 || !!item.snack2 || !!item.drink)
-              ? (
-                <DayStatus status={checkProducts}>
-                  <StatusText>Falta Completar</StatusText>
-                </DayStatus>
-              )
-              : (user.days === 0) &&
-            (
-              <DayStatus status={checkProducts}>
-                <StatusText>Acabou os seus dias</StatusText>
-              </DayStatus>
-            )
-
-        }
-        {
-          item.snack1
-            ? (
-              <Product
-                item={item}
-                handleRemoveProduct={handleRemoveProduct}
-                name='snack1'
-                product={item.snack1}
-              />
-            )
-            : (
-              <ProductContainer>
-                <ProductBox onPress={() => handleFoodPress(item.id, 'snack1')}>
-                  <AddText>Add</AddText>
-                </ProductBox>
-                <ProductName>Snack</ProductName>
-              </ProductContainer>
-            )
-        }
-        {item.plan === 'triplo' &&
-      (
-        item.snack2
-          ? (
-            <TriploContainer>
-              <IconPlus name='plus' size={25} color='#fff' />
-              <Product
-                item={item}
-                handleRemoveProduct={handleRemoveProduct}
-                name='snack2'
-                product={item.snack2}
-              />
-            </TriploContainer>
-          )
-          : (
-            <TriploContainer>
-              <IconPlus name='plus' size={25} color='#fff' />
-              <ProductContainer>
-                <ProductBox onPress={() => handleFoodPress(item.id, 'snack2')}>
-                  <AddText>Add</AddText>
-                </ProductBox>
-                <ProductName>Snack</ProductName>
-              </ProductContainer>
-            </TriploContainer>
-          )
-      )}
-        {
-          item.drink
-            ? (
-              <TriploContainer>
-                <IconPlus name='plus' size={25} color='#fff' />
-                <Product
-                  item={item}
-                  handleRemoveProduct={handleRemoveProduct}
-                  name='drink'
-                  product={item.drink}
-                />
-              </TriploContainer>
-            )
-            : (
-              <TriploContainer>
-                <IconPlus name='plus' size={25} color='#fff' />
-                <ProductContainer>
-                  <ProductBox onPress={() => handleDrinkPress(item.id, 'drink')}>
-                    <AddText>Add</AddText>
-                  </ProductBox>
-                  <ProductName>Bebida</ProductName>
-                </ProductContainer>
-              </TriploContainer>
-            )
-        }
-
+        {item.snack1
+          ? this.renderProduct(item, 'snack1', item.snack1)
+          : this.renderProductChooseSnack(item, 'snack1')}
+        {item.plan === 'triplo' && this.renderIconPlus()}
+        {item.plan === 'triplo' && item.snack2
+          ? this.renderProduct(item, 'snack2', item.snack2)
+          : this.renderProductChooseSnack(item, 'snack2')}
+        {item.drink || item.plan === 'triplo' ? this.renderIconPlus() : null}
+        {item.drink
+          ? this.renderProduct(item, 'drink', item.drink)
+          : this.renderProductChooseDrink(item)}
       </DayBox>
-    </DayContainer>
-  )
+    )
+  }
+
+  render () {
+    const { expanded, heightAnimated } = this.state
+    const { item, user } = this.props
+    const checkProducts =
+      !!item.snack1 && !!item.snack2 && !!item.drink
+        ? 'complete'
+        : !!item.snack1 || !!item.snack2 || !!item.drink
+          ? 'pending'
+          : user.days === 0 && 'pending'
+    console.log(heightAnimated)
+    return (
+      <DayContainer style={styles.container}>
+        <HeaderContainer onPress={this.handleToggleExpand}>
+          <DayName>{item.name}</DayName>
+          <IconPlus name={expanded ? 'up' : 'down'} size={25} color='#fff' />
+        </HeaderContainer>
+
+        {expanded && this.renderProductContainer(item, checkProducts)}
+      </DayContainer>
+    )
+  }
 }
 
-Triplo.propTypes = {
-  item: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array]).isRequired,
-  user: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array]).isRequired,
-  handleRemoveProduct: PropTypes.func.isRequired,
-  handleFoodPress: PropTypes.func.isRequired,
-  handleDrinkPress: PropTypes.func.isRequired
-}
-
-export default Triplo
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    marginBottom: 10,
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#fff'
+  }
+})

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { colors } from '~/styles'
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
   background: ${colors.background};
 `
@@ -17,7 +17,7 @@ elevation: 2;
 export const HeaderName = styled.Text`
 color: #fff;
 font-size: 30;
-font-family: 'gomarice_usuazi_hosomozi';
+font-family: 'Usuazi-Hosomozi';
 
 `
 export const AlertContainer = styled.View`
@@ -39,7 +39,7 @@ padding: 20px;
 export const AlertText = styled.Text`
 color: #fff;
 font-size: 25;
-font-family: 'gomarice_usuazi_hosomozi';
+font-family: 'Usuazi-Hosomozi';
 text-align: center;
 line-height: 27;
 `

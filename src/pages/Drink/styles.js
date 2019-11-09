@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { colors } from '~/styles'
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
   background: ${colors.background};
 `
@@ -14,7 +14,7 @@ export const DrinkContainer = styled.View`
 export const DrinkCategory = styled.Text`
   color: #fff;
   font-size: 30;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3); */;
   margin-left: 20px;
   margin-bottom: 10px;
@@ -23,7 +23,9 @@ export const DrinkFlatList = styled.FlatList`
   flex-direction: row;
   /* background: ${colors.blue}; */
 `
-export const DrinkBox = styled.View`
+export const DrinkBox = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7
+})`
   border: solid 1px #fff;
   width: 192px;
   justify-content: center;
@@ -39,14 +41,14 @@ export const DrinkImage = styled.Image`
 export const DrinkName = styled.Text`
   color: #fff;
   font-size: 25;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3); */;
   margin-top: 7px;
 `
 export const DrinkDescription = styled.Text`
   color: #fff;
   font-size: 18;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3); */;
   margin: 7px 0 15px 0;
 `

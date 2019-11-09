@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import Icon from 'react-native-vector-icons/AntDesign'
 import Header from '~/components/Header'
 
 import PropTypes from 'prop-types'
@@ -50,13 +49,10 @@ class Drink extends Component {
   }
 
   renderItem = ({ item }) => (
-    <DrinkBox>
+    <DrinkBox onPress={() => this.handleAddButton(item)}>
       <DrinkImage source={{ uri: item.image }} risizeMode='cover' />
       <DrinkName>{item.name}</DrinkName>
       <DrinkDescription>{item.description}</DrinkDescription>
-      <AddButton onPress={() => this.handleAddButton(item)}>
-        <Icon name='pluscircleo' size={30} color='#fff' />
-      </AddButton>
     </DrinkBox>
   )
 

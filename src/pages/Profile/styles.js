@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { colors } from '~/styles'
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
   background: ${colors.background};
 `
@@ -55,13 +55,13 @@ export const Avatar = styled.Image`
 export const ProfileName = styled.Text`
   color: #fff;
   font-size: 22px;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
 `
 export const ProfilePoints = styled.Text`
   color: #fff;
   font-size: 24px;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   margin-top: 10px;
 `
@@ -77,7 +77,7 @@ export const PackageTitle = styled.Text`
   margin-bottom: 10px;
   color: #fff;
   font-size: 22;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 export const PackagePart = styled.View`
@@ -94,13 +94,13 @@ export const PackageBox = styled.View`
 export const PackageDays = styled.Text`
   color: #fff;
   font-size: 30px;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 export const PackageAmount = styled.Text`
   color: #fff;
   font-size: 19px;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 export const ChangePackage = styled.TouchableOpacity.attrs({
@@ -119,7 +119,7 @@ export const ChangePackage = styled.TouchableOpacity.attrs({
 export const ChangeText = styled.Text`
   color: #fff;
   font-size: 22;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   text-align: center;
   `
@@ -138,7 +138,7 @@ export const PackageCancel = styled.TouchableOpacity.attrs({
 export const CancelText = styled.Text`
   color: #fff;
   font-size: 22px;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 
@@ -152,7 +152,7 @@ export const PaymentTitle = styled.Text`
   margin-bottom: 10px;
   color: #fff;
   font-size: 22;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 export const PaymentPart = styled.View`
@@ -170,13 +170,13 @@ export const PaymentBox = styled.View`
 export const PaymentNumber = styled.Text`
   color: #fff;
   font-size: 30px;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 export const PaymentMode = styled.Text`
   color: #fff;
   font-size: 20px;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 export const ChangePayment = styled.TouchableOpacity.attrs({
@@ -195,7 +195,7 @@ export const ChangePayment = styled.TouchableOpacity.attrs({
 export const ChangeTextPayment = styled.Text`
   color: #fff;
   font-size: 22;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   text-align: center;
   line-height: 25

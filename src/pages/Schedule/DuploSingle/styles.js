@@ -3,7 +3,7 @@ import { Dimensions } from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { colors } from '~/styles'
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
 
 `
 export const DayContainer = styled.View`
@@ -18,7 +18,7 @@ export const TriploContainer = styled.View`
 export const DayName = styled.Text`
   color: #fff;
   font-size: 24;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   align-self: flex-start;
   margin-bottom: 10px;
 `
@@ -33,7 +33,7 @@ export const DayStatus = styled.View`
 export const StatusText = styled.Text`
   color: #fff;
   font-size: 16;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
 `
 
 export const DayBox = styled.View`
@@ -77,7 +77,7 @@ export const IconPlus = styled(Icon)`
 export const AddText = styled.Text`
   color: #fff;
   font-size: 25px;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
 `
 
 export const ProductName = styled.Text`
@@ -86,7 +86,7 @@ export const ProductName = styled.Text`
   text-align: center;
   font-size: 16px;
   line-height: 20px;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
   margin-top: 5px;
   background: ${colors.blue};
   border-radius: 4;

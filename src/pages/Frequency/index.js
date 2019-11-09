@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import Icon from 'react-native-vector-icons/AntDesign'
 import coxinha from '~/assets/coxinha.jpg'
 import croquete from '~/assets/croquete.jpg'
 import paodequeijo from '~/assets/paodequeijo.jpg'
@@ -15,12 +14,7 @@ import {
   FrequencyImage,
   FrequencyDays,
   FrequencyDescription,
-  FrequencyCheckButton,
-  NextButton,
-  NextButtonText,
-  FakeButton,
-  PointsContainer,
-  PointsText
+  FakeButton
 } from './styles'
 
 export default class Frequency extends Component {
@@ -77,9 +71,6 @@ export default class Frequency extends Component {
         <FrequencyImage source={item.image} resizeMode='cover' />
         <FrequencyDays>{item.days}</FrequencyDays>
         <FrequencyDescription>{item.description}</FrequencyDescription>
-        <PointsContainer>
-          <PointsText>Ganhe {item.points} Pontos</PointsText>
-        </PointsContainer>
       </FrequencyBox>
     )
   };

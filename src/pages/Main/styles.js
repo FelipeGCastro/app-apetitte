@@ -1,19 +1,19 @@
 import styled from 'styled-components/native'
-import { Dimensions } from 'react-native'
 import { colors } from '~/styles'
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
   background: ${colors.background};
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+  padding: 10px 20px;
 `
 export const LogoImage = styled.Image`
+  align-self: center;
   width: 250px;
 `
 export const EmailInput = styled.TextInput`
-  width: ${Dimensions.get('window').width / 1.4};
-  height: 40px;
+  height: 50px;
   background: #fff;
   border-radius: 6px;
   margin-bottom: 10px;
@@ -23,8 +23,7 @@ export const EmailInput = styled.TextInput`
   font-size: 18;
 `
 export const PasswordInput = styled.TextInput`
-  width: ${Dimensions.get('window').width / 1.4};
-  height: 40px;
+  height: 50px;
   background: #fff;
   border-radius: 6px;
   margin-bottom: 15px;
@@ -35,8 +34,7 @@ export const PasswordInput = styled.TextInput`
 `
 
 export const LoginButton = styled.TouchableOpacity`
-   width: ${Dimensions.get('window').width / 1.4};
-  height: 40px;
+  height: 50px;
   background: ${colors.blue};
   justify-content: center;
   align-items: center;
@@ -45,9 +43,9 @@ export const LoginButton = styled.TouchableOpacity`
   elevation: 2;
 `
 export const LoginButtonText = styled.Text`
-  font-size: 28px;
+  font-size: 38px;
   color: #fff;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
 `
 
 export const LinksContainer = styled.View`
@@ -68,9 +66,9 @@ export const ForgotPasswordButton = styled.TouchableOpacity.attrs({
   margin-right: 20px;
 `
 export const ForgotPasswordText = styled.Text`
-  font-size: 20px;
+  font-size: 25px;
   color: #fff;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
 `
 export const SignUpButton = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7
@@ -83,7 +81,7 @@ export const SignUpButton = styled.TouchableOpacity.attrs({
   padding: 10px;
 `
 export const SignUpLink = styled.Text`
-  font-size: 20px;
+  font-size: 25px;
   color: #fff;
-  font-family: 'gomarice_usuazi_hosomozi';
+  font-family: 'Usuazi-Hosomozi';
 `

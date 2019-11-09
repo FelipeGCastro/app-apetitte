@@ -18,7 +18,7 @@ import {
   IconPlus
 } from './styles'
 
-const Duplo = ({ item, user, handleRemoveProduct, handleFoodPress, handleDrinkPress }) => {
+const Duplo = ({ item, user, onRemoveProduct, onFoodPress, onDrinkPress }) => {
   const checkProducts = !!item.snack1 && !!item.drink
     ? 'complete'
     : (!!item.snack1 || !!item.drink)
@@ -56,14 +56,14 @@ const Duplo = ({ item, user, handleRemoveProduct, handleFoodPress, handleDrinkPr
             ? (
               <Product
                 item={item}
-                handleRemoveProduct={handleRemoveProduct}
+                onRemoveProduct={onRemoveProduct}
                 name='snack1'
                 product={item.snack1}
               />
             )
             : (
               <ProductContainer>
-                <ProductBox onPress={() => handleFoodPress(item.id, 'snack1')}>
+                <ProductBox onPress={() => onFoodPress(item.id, 'snack1')}>
                   <AddText>Add</AddText>
                 </ProductBox>
                 <ProductName>Snack</ProductName>
@@ -77,7 +77,7 @@ const Duplo = ({ item, user, handleRemoveProduct, handleFoodPress, handleDrinkPr
                 <IconPlus name='plus' size={25} color='#fff' />
                 <Product
                   item={item}
-                  handleRemoveProduct={handleRemoveProduct}
+                  onRemoveProduct={onRemoveProduct}
                   name='drink'
                   product={item.drink}
                 />
@@ -87,7 +87,7 @@ const Duplo = ({ item, user, handleRemoveProduct, handleFoodPress, handleDrinkPr
               <TriploContainer>
                 <IconPlus name='plus' size={25} color='#fff' />
                 <ProductContainer>
-                  <ProductBox onPress={() => handleDrinkPress(item.id, 'drink')}>
+                  <ProductBox onPress={() => onDrinkPress(item.id, 'drink')}>
                     <AddText>Add</AddText>
                   </ProductBox>
                   <ProductName>Bebida</ProductName>
@@ -104,9 +104,9 @@ const Duplo = ({ item, user, handleRemoveProduct, handleFoodPress, handleDrinkPr
 Duplo.propTypes = {
   item: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array]).isRequired,
   user: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array]).isRequired,
-  handleRemoveProduct: PropTypes.func.isRequired,
-  handleFoodPress: PropTypes.func.isRequired,
-  handleDrinkPress: PropTypes.func.isRequired
+  onRemoveProduct: PropTypes.func.isRequired,
+  onFoodPress: PropTypes.func.isRequired,
+  onDrinkPress: PropTypes.func.isRequired
 }
 
 export default Duplo

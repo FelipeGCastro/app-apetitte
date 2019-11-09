@@ -17,7 +17,7 @@ export const BackButton = styled.TouchableOpacity.attrs({
 export const HeaderName = styled.Text`
 color: #fff;
 font-size: 30;
-font-family: 'gomarice_usuazi_hosomozi';
+font-family: 'Usuazi-Hosomozi';
 /* text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3); */;
 margin-left: 20px;
 `
