@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Animated } from 'react-native'
 
 import coxinha from '~/assets/coxinha.jpg'
 import croquete from '~/assets/croquete.jpg'
@@ -13,8 +14,7 @@ import {
   FrequencyBox,
   FrequencyImage,
   FrequencyDays,
-  FrequencyDescription,
-  FakeButton
+  FrequencyDescription
 } from './styles'
 
 export default class Frequency extends Component {
@@ -42,18 +42,28 @@ export default class Frequency extends Component {
         points: 50
       }
     ],
+    animation: new Animated.Value(100),
+    boxOffset: new Animated.Value(50),
     checked: null
   };
 
-  componentDidMount = () => {}
+  componentDidMount = () => {
+    Animated.spring(this.state.boxOffset, {
+      toValue: 0,
+      speed: 3,
+      bounciness: 10
+    }).start()
+  }
 
-  handleCheckFrequency = (item) => {
+  handleCheckPress = (item) => () => {
     const { checked } = this.state
-    if (checked === item.id) {
-      this.setState({ checked: null })
-    } else {
-      this.setState({ checked: item.id })
-    }
+    this.setState({ checked: checked === item.id ? null : item.id }, () => {
+      const finalValue = this.state.checked ? 0 : 100
+      Animated.spring(this.state.animation, {
+        toValue: finalValue,
+        bounciness: 10
+      }).start()
+    })
   }
 
   handleNextPress = () => {
@@ -65,7 +75,7 @@ export default class Frequency extends Component {
     const { checked } = this.state
     return (
       <FrequencyBox
-        onPress={() => this.handleCheckFrequency(item)}
+        onPress={this.handleCheckPress(item)}
         checked={checked === item.id ? true : null}
       >
         <FrequencyImage source={item.image} resizeMode='cover' />
@@ -76,21 +86,36 @@ export default class Frequency extends Component {
   };
 
   render () {
-    const { Frequencys, checked } = this.state
+    const { Frequencys } = this.state
     return (
       <Container>
         <PageText>Agora vamos escolher a frequência.</PageText>
         <FlatListContainer>
-          <FrequencyContainer
-            data={Frequencys}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(frequency) => frequency.id.toString()}
-            renderItem={this.renderItem}
-          />
+          <Animated.View style={{
+            transform: [
+              { translateX: this.state.boxOffset }
+            ]
+          }}
+          >
+            <FrequencyContainer
+              data={Frequencys}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              keyExtractor={(frequency) => frequency.id.toString()}
+              renderItem={this.renderItem}
+            />
+          </Animated.View>
+
         </FlatListContainer>
-        {checked ? <ButtonNext onPressFunction={this.handleNextPress} />
-          : <FakeButton />}
+        <Animated.View style={{
+          transform: [
+            { translateY: this.state.animation }
+          ]
+        }}
+        >
+          <ButtonNext onPressFunction={this.handleNextPress} />
+        </Animated.View>
+
       </Container>
     )
   }

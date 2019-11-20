@@ -32,7 +32,7 @@ export const FrequencyBox = styled.TouchableOpacity.attrs({
   border-color: ${(props) => (props.checked ? '#71DFD3' : '#fff')} ;
   border-style: solid;
   border-width: 3px;
-  background: ${colors.background};
+  background: ${(props) => (props.checked ? '#71DFD3' : colors.background)};
   align-items: center;
   justify-content: flex-start;
   elevation: 2;
@@ -81,5 +81,5 @@ export const NextButton = styled.TouchableOpacity`
 `
 
 export const FakeButton = styled.View`
-  height: 40px;
+  height: 55px;
 `

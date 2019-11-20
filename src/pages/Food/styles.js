@@ -40,13 +40,13 @@ export const FoodImage = styled.Image`
 `
 export const FoodName = styled.Text`
   color: #fff;
-  font-size: 25;
+  font-size: 30;
   font-family: 'Usuazi-Hosomozi';
   margin-top: 7px;
 `
 export const FoodDescription = styled.Text`
   color: #fff;
-  font-size: 18;
+  font-size: 22;
   font-family: 'Usuazi-Hosomozi';
   margin: 5px 0 20px 0;
 `

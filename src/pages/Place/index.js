@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import { Animated } from 'react-native'
 
-import Icon from 'react-native-vector-icons/AntDesign'
 import colombo from '~/assets/colombo.jpg'
 import atrium from '~/assets/atrium-saldanha.jpg'
 import ButtonNext from '~/components/ButtonNext'
@@ -13,9 +13,7 @@ import {
   PlaceImage,
   PlaceName,
   PlaceDays,
-  PlaceHours,
-  PlaceCheckButton,
-  FakeButton
+  PlaceHours
 } from './styles'
 
 export default class Place extends Component {
@@ -43,18 +41,28 @@ export default class Place extends Component {
         hours: '10h e 15h'
       }
     ],
+    animation: new Animated.Value(100),
+    boxOffset: new Animated.Value(50),
     checked: null
   };
 
-  componentDidMount = () => {}
+  componentDidMount = () => {
+    Animated.spring(this.state.boxOffset, {
+      toValue: 0,
+      speed: 3,
+      bounciness: 10
+    }).start()
+  }
 
-  handleCheckPlace = (item) => {
+  handleCheckPlace = (item) => () => {
     const { checked } = this.state
-    if (checked === item.id) {
-      this.setState({ checked: null })
-    } else {
-      this.setState({ checked: item.id })
-    }
+    this.setState({ checked: checked === item.id ? null : item.id }, () => {
+      const finalValue = this.state.checked ? 0 : 100
+      Animated.spring(this.state.animation, {
+        toValue: finalValue,
+        bounciness: 10
+      }).start()
+    })
   }
 
   handleNextPress = () => {
@@ -66,7 +74,7 @@ export default class Place extends Component {
     const { checked } = this.state
     return (
       <PlaceBox
-        onPress={() => this.handleCheckPlace(item)}
+        onPress={this.handleCheckPlace(item)}
         checked={checked === item.id ? true : null}
       >
         <PlaceImage source={item.image} resizeMode='cover' />
@@ -78,23 +86,34 @@ export default class Place extends Component {
   };
 
   render () {
-    const { places, checked } = this.state
+    const { places } = this.state
     return (
       <Container>
         <PageText>Primeiro Vamos decidir o lugar para sua entrega</PageText>
         <FlatListContainer>
-          <PlaceContainer
-            data={places}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(place) => place.id.toString()}
-            renderItem={this.renderItem}
-          />
+          <Animated.View style={{
+            transform: [
+              { translateX: this.state.boxOffset }
+            ]
+          }}
+          >
+            <PlaceContainer
+              data={places}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              keyExtractor={(place) => place.id.toString()}
+              renderItem={this.renderItem}
+            />
+          </Animated.View>
         </FlatListContainer>
-        {checked ? (
+        <Animated.View style={{
+          transform: [
+            { translateY: this.state.animation }
+          ]
+        }}
+        >
           <ButtonNext onPressFunction={this.handleNextPress} />
-        )
-          : <FakeButton />}
+        </Animated.View>
 
       </Container>
     )

@@ -45,18 +45,6 @@ export default class Triplo extends Component {
     }).start()
   }
 
-  _setMaxHeight (event) {
-    this.setState({
-      maxHeight: event.nativeEvent.layout.height
-    })
-  }
-
-  _setMinHeight (event) {
-    this.setState({
-      minHeight: event.nativeEvent.layout.height
-    })
-  }
-
   renderProductChooseSnack = (item, snackChoose) => {
     const { onFoodPress } = this.props
     return (
