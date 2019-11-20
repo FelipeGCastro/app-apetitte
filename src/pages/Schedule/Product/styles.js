@@ -58,8 +58,8 @@ export const ProductName = styled.Text`
   width: 100%;
   color: #fff;
   text-align: center;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 25px;
+  line-height: 30px;
   font-family: 'Usuazi-Hosomozi';
   margin-top: 5px;
   background: ${colors.blue};

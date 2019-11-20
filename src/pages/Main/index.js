@@ -4,6 +4,7 @@ import { colors } from '~/styles'
 
 import {
   Container,
+  ContainerBody,
   LogoImage,
   EmailInput,
   PasswordInput,
@@ -22,7 +23,7 @@ export default class Main extends Component {
     password: null
   }
 
-  nextPagine = () => {
+  handleNextPagine = () => {
     const { navigation } = this.props
     navigation.navigate('Place')
   }
@@ -39,48 +40,50 @@ export default class Main extends Component {
     const { email, password } = this.state
     return (
       <Container>
-        <LogoImage source={logo} resizeMode='contain' />
-        <EmailInput
-          value={email}
-          onChangeText={this.handleEmailChange}
-          autoCapitalize='words'
-          autoCorrect={false}
-          placeholder='E-mail'
-          textContentType='emailAddress'
-          returnKeyType='next'
-          onSubmitEditing={() => this.password.focus()}
-          keyboardType='email-address'
-          autoFocus={false}
-          blurOnSubmit={false}
-          placeholderTextColor={colors.softGray}
-        />
-        <PasswordInput
-          ref={(input) => {
-            this.password = input
-          }}
-          value={password}
-          onChangeText={this.handlePasswordChange}
-          autoCorrect={false}
-          placeholder='Palavra-passe'
-          textContentType='password'
-          secureTextEntry
-          returnKeyType='next'
-          onSubmitEditing={() => this.passwordConfirmation.focus()}
-          autoFocus={false}
-          blurOnSubmit={false}
-          placeholderTextColor={colors.softGray}
-        />
-        <LoginButton onPress={this.nextPagine}>
-          <LoginButtonText>Entrar</LoginButtonText>
-        </LoginButton>
-        <LinksContainer>
-          <ForgotPasswordButton>
-            <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
-          </ForgotPasswordButton>
-          <SignUpButton>
-            <SignUpLink>Me Cadastrar</SignUpLink>
-          </SignUpButton>
-        </LinksContainer>
+        <ContainerBody>
+          <LogoImage source={logo} resizeMode='contain' />
+          <EmailInput
+            value={email}
+            onChangeText={this.handleEmailChange}
+            autoCapitalize='none'
+            autoCorrect={false}
+            placeholder='E-mail'
+            textContentType='emailAddress'
+            returnKeyType='next'
+            onSubmitEditing={() => this.password.focus()}
+            keyboardType='email-address'
+            autoFocus={false}
+            blurOnSubmit={false}
+            placeholderTextColor={colors.softGray}
+          />
+          <PasswordInput
+            ref={(input) => {
+              this.password = input
+            }}
+            value={password}
+            onChangeText={this.handlePasswordChange}
+            autoCorrect={false}
+            placeholder='Palavra-passe'
+            textContentType='password'
+            secureTextEntry
+            returnKeyType='next'
+            onSubmitEditing={() => this.passwordConfirmation.focus()}
+            autoFocus={false}
+            blurOnSubmit={false}
+            placeholderTextColor={colors.softGray}
+          />
+          <LoginButton onPress={this.handleNextPagine}>
+            <LoginButtonText>Entrar</LoginButtonText>
+          </LoginButton>
+          <LinksContainer>
+            <ForgotPasswordButton>
+              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
+            </ForgotPasswordButton>
+            <SignUpButton>
+              <SignUpLink>Me Cadastrar</SignUpLink>
+            </SignUpButton>
+          </LinksContainer>
+        </ContainerBody>
       </Container>
     )
   }

@@ -6,6 +6,12 @@ export const Container = styled.SafeAreaView`
   background: ${colors.background};
   justify-content: center;
   align-items: stretch;
+`
+export const ContainerBody = styled.View`
+  flex: 1;
+  background: ${colors.background};
+  justify-content: center;
+  align-items: stretch;
   padding: 10px 20px;
 `
 export const LogoImage = styled.Image`

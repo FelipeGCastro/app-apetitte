@@ -47,5 +47,5 @@ export const ExpireDate = styled.Text`
 
 export const ScheduleContainer = styled.FlatList`
   flex-grow: 1;
-  padding: 20px 10px 40px 10px;
+  padding: 30px 10px 40px;
 `

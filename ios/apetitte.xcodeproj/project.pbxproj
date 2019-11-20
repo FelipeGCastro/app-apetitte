@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* apetitteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* apetitteTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -18,9 +19,9 @@
 		2DCD954D1E0B4F2C00145EB5 /* apetitteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* apetitteTests.m */; };
 		43652873B69BBCD05DCE7E0B /* libPods-apetitte-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BDA0F430EB67A14DB47ADD /* libPods-apetitte-tvOSTests.a */; };
 		5A3D0FD5663B4833A6D4828E /* Usuazi-Hosomozi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 065AEBE1BD114B1E85AAB1AC /* Usuazi-Hosomozi.ttf */; };
+		6AEA800FB8404004A616DCA0 /* Usuazi-Hosomozi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7841948DE244D96B66AD69D /* Usuazi-Hosomozi.ttf */; };
 		913B31D1EDBFE37D0F369DC2 /* libPods-apetitte-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90079F8BA4658A31F5FEE1C4 /* libPods-apetitte-tvOS.a */; };
 		95F1D59C2AFA09366CF4E435 /* libPods-apetitteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D529A05F3184C5C1CA41BAF /* libPods-apetitteTests.a */; };
-		6AEA800FB8404004A616DCA0 /* Usuazi-Hosomozi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7841948DE244D96B66AD69D /* Usuazi-Hosomozi.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,7 @@
 		00E356EE1AD99517003FC87E /* apetitteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = apetitteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* apetitteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = apetitteTests.m; sourceTree = "<group>"; };
-		065AEBE1BD114B1E85AAB1AC /* Usuazi-Hosomozi.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Usuazi-Hosomozi.ttf; path = ../src/assets/fonts/Usuazi-Hosomozi.ttf; sourceTree = "<group>"; };
+		065AEBE1BD114B1E85AAB1AC /* Usuazi-Hosomozi.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Usuazi-Hosomozi.ttf"; path = "../src/assets/fonts/Usuazi-Hosomozi.ttf"; sourceTree = "<group>"; };
 		094F828F1F3749338F0056AD /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		0E13FE9BEDE9E5A1886FA522 /* libPods-apetitte.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-apetitte.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* apetitte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = apetitte.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,13 +79,13 @@
 		C30BBA4B562D0540192AC077 /* Pods-apetitteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apetitteTests.debug.xcconfig"; path = "Target Support Files/Pods-apetitteTests/Pods-apetitteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCD5E0C11272420D86AEEDE2 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		DDEB07B0B6CD4EF3670AE42E /* Pods-apetitteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apetitteTests.release.xcconfig"; path = "Target Support Files/Pods-apetitteTests/Pods-apetitteTests.release.xcconfig"; sourceTree = "<group>"; };
+		E7841948DE244D96B66AD69D /* Usuazi-Hosomozi.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Usuazi-Hosomozi.ttf"; path = "../src/assets/fonts/Usuazi-Hosomozi.ttf"; sourceTree = "<group>"; };
 		E9F710A646A54EA4A05EF082 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F3C06AE26EAB45D199FF8893 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		F61F19F2A51447FBD2C85E4C /* Pods-apetitte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apetitte.debug.xcconfig"; path = "Target Support Files/Pods-apetitte/Pods-apetitte.debug.xcconfig"; sourceTree = "<group>"; };
 		FEB013CD7DEBECDBC4325BBC /* Pods-apetitte-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-apetitte-tvOS.release.xcconfig"; path = "Target Support Files/Pods-apetitte-tvOS/Pods-apetitte-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		E7841948DE244D96B66AD69D /* Usuazi-Hosomozi.ttf */ = {isa = PBXFileReference; name = "Usuazi-Hosomozi.ttf"; path = "../src/assets/fonts/Usuazi-Hosomozi.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -729,6 +730,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = apetitte;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -748,6 +750,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = apetitte;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
