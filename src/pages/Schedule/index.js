@@ -8,8 +8,6 @@ import { bindActionCreators } from 'redux'
 import DaysActions from '~/store/ducks/days'
 
 import Triplo from './Triplo'
-import Duplo from './Duplo'
-import DuploSingle from './DuploSingle'
 
 import {
   Container,
@@ -57,46 +55,14 @@ class Schedule extends Component {
 
   renderItem = ({ item }) => {
     const { user } = this.props
-    let dayContainer
-    switch (user.plan) {
-      case 'triplo':
-        dayContainer = (
-          <Triplo
-            item={item}
-            user={user}
-            onFoodPress={this.handleFoodPress}
-            onDrinkPress={this.handleDrinkPress}
-            onRemoveProduct={this.handleRemoveProduct}
-          />
-        )
-        break
-      case 'duplo':
-        dayContainer = (
-          <Duplo
-            item={item}
-            user={user}
-            onFoodPress={this.handleFoodPress}
-            onDrinkPress={this.handleDrinkPress}
-            onRemoveProduct={this.handleRemoveProduct}
-          />
-        )
-        break
-      case 'duploSingle':
-        dayContainer = (
-          <DuploSingle
-            item={item}
-            user={user}
-            onFoodPress={this.handleFoodPress}
-            onDrinkPress={this.handleDrinkPress}
-            onRemoveProduct={this.handleRemoveProduct}
-          />
-        )
-        break
-
-      default:
-        break
-    }
-    return dayContainer
+    return (
+      <Triplo
+        item={item}
+        user={user}
+        onFoodPress={this.handleFoodPress}
+        onDrinkPress={this.handleDrinkPress}
+        onRemoveProduct={this.handleRemoveProduct}
+      />)
   }
 
   render () {

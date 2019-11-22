@@ -37,12 +37,13 @@ export default class Triplo extends Component {
 
   handleToggleExpand = () => {
     const { expanded } = this.state
-    this.setState({ expanded: !expanded })
-    const finalValue = this.state.expanded ? 0 : 100
-    Animated.spring(this.state.animation, {
-      toValue: finalValue,
-      bounciness: 10
-    }).start()
+    this.setState({ expanded: !expanded }, () => {
+      const finalValue = this.state.expanded ? 100 : 0
+      Animated.spring(this.state.animation, {
+        toValue: finalValue,
+        bounciness: 10
+      }).start()
+    })
   }
 
   renderProductChooseSnack = (item, snackChoose) => {
