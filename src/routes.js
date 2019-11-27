@@ -2,14 +2,12 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 
 import Menu from '~/routesPrivate'
 import Main from '~/pages/Main'
-import Place from '~/pages/Place'
-import Frequency from '~/pages/Frequency'
+import SignupPages from '~/routesPrivate/SignupPages'
 
 const Routes = createAppContainer(createSwitchNavigator({
-  Menu,
   Main,
-  Frequency,
-  Place
+  Menu,
+  SignupPages
 }))
 
 export default Routes

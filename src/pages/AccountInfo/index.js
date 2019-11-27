@@ -1,48 +1,60 @@
 import React, { Component } from 'react'
-import logo from '~/assets/logo.png'
 import { colors } from '~/styles'
 
 import {
   Container,
   ContainerBody,
-  LogoImage,
+  NameInput,
   EmailInput,
   PasswordInput,
   LoginButton,
   LoginButtonText,
   LinksContainer,
-  ForgotPasswordButton,
-  ForgotPasswordText,
   SignUpButton,
   SignUpLink
 } from './styles'
 
-export default class Main extends Component {
+export default class AccountInfo extends Component {
   state={
+    name: '',
     email: '',
     password: null
   }
 
   handleNextPagine = () => {
     const { navigation } = this.props
-    navigation.navigate('Menu')
+    navigation.navigate('Place')
   }
 
   handleInputChange = (name) => (value) => {
     this.setState({ [name]: value })
   }
 
-  handleSignupPress = () => {
+  handleLoginPress = () => {
     const { navigation } = this.props
-    navigation.navigate('SignupPages')
+    navigation.navigate('Main')
   }
 
   render () {
-    const { email, password } = this.state
+    const { name, email, password } = this.state
     return (
       <Container>
         <ContainerBody>
-          <LogoImage source={logo} resizeMode='contain' />
+
+          <NameInput
+            value={name}
+            onChangeText={this.handleInputChange('email')}
+            autoCapitalize='none'
+            autoCorrect={false}
+            placeholder='Nome Completo'
+            textContentType='emailAddress'
+            returnKeyType='next'
+            onSubmitEditing={() => this.password.focus()}
+            keyboardType='email-address'
+            autoFocus={false}
+            blurOnSubmit={false}
+            placeholderTextColor={colors.softGray}
+          />
           <EmailInput
             value={email}
             onChangeText={this.handleInputChange('email')}
@@ -73,15 +85,28 @@ export default class Main extends Component {
             blurOnSubmit={false}
             placeholderTextColor={colors.softGray}
           />
+          <PasswordInput
+            ref={(input) => {
+              this.password = input
+            }}
+            value={password}
+            onChangeText={this.handleInputChange('password')}
+            autoCorrect={false}
+            placeholder='Confirmar Palavra-passe'
+            textContentType='password'
+            secureTextEntry
+            returnKeyType='next'
+            onSubmitEditing={() => this.passwordConfirmation.focus()}
+            autoFocus={false}
+            blurOnSubmit={false}
+            placeholderTextColor={colors.softGray}
+          />
           <LoginButton onPress={this.handleNextPagine}>
-            <LoginButtonText>Entrar</LoginButtonText>
+            <LoginButtonText>Prosseguir</LoginButtonText>
           </LoginButton>
           <LinksContainer>
-            <ForgotPasswordButton>
-              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
-            </ForgotPasswordButton>
-            <SignUpButton onPress={this.handleSignupPress}>
-              <SignUpLink>Me Cadastrar</SignUpLink>
+            <SignUpButton onPress={this.handleLoginPress}>
+              <SignUpLink>Tenho uma Conta</SignUpLink>
             </SignUpButton>
           </LinksContainer>
         </ContainerBody>

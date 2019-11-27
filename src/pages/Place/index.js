@@ -86,7 +86,7 @@ export default class Place extends Component {
   };
 
   render () {
-    const { places } = this.state
+    const { places, checked } = this.state
     return (
       <Container>
         <PageText>Primeiro Vamos decidir o lugar para sua entrega</PageText>
@@ -106,14 +106,7 @@ export default class Place extends Component {
             />
           </Animated.View>
         </FlatListContainer>
-        <Animated.View style={{
-          transform: [
-            { translateY: this.state.animation }
-          ]
-        }}
-        >
-          <ButtonNext onPressFunction={this.handleNextPress} />
-        </Animated.View>
+        <ButtonNext onPressFunction={this.handleNextPress} checked={checked} />
 
       </Container>
     )

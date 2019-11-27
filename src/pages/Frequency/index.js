@@ -45,7 +45,7 @@ export default class Frequency extends Component {
     animation: new Animated.Value(100),
     boxOffset: new Animated.Value(50),
     checked: null
-  };
+  }
 
   componentDidMount = () => {
     Animated.spring(this.state.boxOffset, {
@@ -57,13 +57,7 @@ export default class Frequency extends Component {
 
   handleCheckPress = (item) => () => {
     const { checked } = this.state
-    this.setState({ checked: checked === item.id ? null : item.id }, () => {
-      const finalValue = this.state.checked ? 0 : 100
-      Animated.spring(this.state.animation, {
-        toValue: finalValue,
-        bounciness: 10
-      }).start()
-    })
+    this.setState({ checked: checked === item.id ? null : item.id })
   }
 
   handleNextPress = () => {
@@ -86,7 +80,7 @@ export default class Frequency extends Component {
   };
 
   render () {
-    const { Frequencys } = this.state
+    const { Frequencys, checked } = this.state
     return (
       <Container>
         <PageText>Agora vamos escolher a frequência.</PageText>
@@ -107,14 +101,7 @@ export default class Frequency extends Component {
           </Animated.View>
 
         </FlatListContainer>
-        <Animated.View style={{
-          transform: [
-            { translateY: this.state.animation }
-          ]
-        }}
-        >
-          <ButtonNext onPressFunction={this.handleNextPress} />
-        </Animated.View>
+        <ButtonNext onPressFunction={this.handleNextPress} checked={checked} />
 
       </Container>
     )

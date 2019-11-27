@@ -18,38 +18,48 @@ export const LogoImage = styled.Image`
   align-self: center;
   width: 250px;
 `
-export const EmailInput = styled.TextInput`
-  height: 50px;
+export const NameInput = styled.TextInput`
+  height: 60px;
   background: #fff;
   border-radius: 8px;
   margin-bottom: 10px;
   padding: 0 15px;
-  elevation: 2;
+  elevation: 3;
+  color: ${colors.textSecundary};
+  font-size: 18;
+`
+export const EmailInput = styled.TextInput`
+  height: 60px;
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 0 15px;
+  elevation: 3;
   color: ${colors.textSecundary};
   font-size: 18;
 `
 export const PasswordInput = styled.TextInput`
-  height: 50px;
+  height: 60px;
   background: #fff;
   border-radius: 8px;
   margin-bottom: 15px;
   padding: 0 15px;
-  elevation: 2;
-  color: ${colors.softGray};
+  elevation: 3;
+  color: ${colors.textSecundary};
   font-size: 18;
 `
 
 export const LoginButton = styled.TouchableOpacity`
-  height: 50px;
+  height: 60px;
   background: ${colors.green};
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   margin-bottom: 30px;
-  elevation: 2;
+  elevation: 3;
 `
 export const LoginButtonText = styled.Text`
-  font-size: 38px;
+  font-size: 40px;
   color: #fff;
   font-family: 'Usuazi-Hosomozi';
 `
@@ -60,22 +70,6 @@ export const LinksContainer = styled.View`
   align-items: center;
 `
 
-export const ForgotPasswordButton = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.7
-})`
-  /* background: ${colors.blue}; */
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  /* elevation: 2; */
-  /* padding: 10px; */
-  margin-right: 20px;
-`
-export const ForgotPasswordText = styled.Text`
-  font-size: 25px;
-  color: #fff;
-  font-family: 'Usuazi-Hosomozi';
-`
 export const SignUpButton = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7
 })`
@@ -83,7 +77,7 @@ export const SignUpButton = styled.TouchableOpacity.attrs({
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  /* elevation: 2; */
+  /* elevation: 3; */
   padding: 10px;
 `
 export const SignUpLink = styled.Text`
