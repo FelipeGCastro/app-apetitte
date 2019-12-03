@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 
 export const NextButton = styled.TouchableOpacity`
   margin: 0 20px;
-  height: 55px;
+  height: 60px;
   justify-content: center;
   align-items: center;
   background: #71DFD3;

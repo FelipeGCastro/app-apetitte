@@ -41,28 +41,30 @@ export default class Place extends Component {
         hours: '10h e 15h'
       }
     ],
-    animation: new Animated.Value(100),
-    boxOffset: new Animated.Value(50),
+    animation: new Animated.Value(-150),
+    boxOffset: new Animated.Value(100),
     checked: null
   };
 
   componentDidMount = () => {
-    Animated.spring(this.state.boxOffset, {
-      toValue: 0,
-      speed: 3,
-      bounciness: 10
-    }).start()
+    Animated.parallel([
+      Animated.spring(this.state.animation, {
+        toValue: 0,
+        speed: 1,
+        bounciness: 7
+      }),
+      Animated.spring(this.state.boxOffset, {
+        toValue: 0,
+        speed: 1,
+        bounciness: 7
+      })
+
+    ]).start()
   }
 
   handleCheckPlace = (item) => () => {
     const { checked } = this.state
-    this.setState({ checked: checked === item.id ? null : item.id }, () => {
-      const finalValue = this.state.checked ? 0 : 100
-      Animated.spring(this.state.animation, {
-        toValue: finalValue,
-        bounciness: 10
-      }).start()
-    })
+    this.setState({ checked: checked === item.id ? null : item.id })
   }
 
   handleNextPress = () => {
@@ -89,7 +91,15 @@ export default class Place extends Component {
     const { places, checked } = this.state
     return (
       <Container>
-        <PageText>Primeiro Vamos decidir o lugar para sua entrega</PageText>
+        <Animated.View
+          style={{
+            transform: [
+              { translateY: this.state.animation }
+            ]
+          }}
+        >
+          <PageText>Primeiro Vamos decidir o lugar para sua entrega</PageText>
+        </Animated.View>
         <FlatListContainer>
           <Animated.View style={{
             transform: [

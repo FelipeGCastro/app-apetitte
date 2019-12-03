@@ -78,7 +78,7 @@ export default class Main extends Component {
           </LoginButton>
           <LinksContainer>
             <ForgotPasswordButton>
-              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
+              <ForgotPasswordText>Esqueci senha</ForgotPasswordText>
             </ForgotPasswordButton>
             <SignUpButton onPress={this.handleSignupPress}>
               <SignUpLink>Me Cadastrar</SignUpLink>

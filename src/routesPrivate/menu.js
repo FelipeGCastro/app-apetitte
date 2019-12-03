@@ -55,7 +55,7 @@ const TabNavigator = createBottomTabNavigator(
     tabBarOptions: {
       keyboardHidesTabBar: true,
       showLabel: false,
-      activeTintColor: colors.lightyellow,
+      activeTintColor: colors.green,
       inactiveTintColor: '#fff',
       style: {
         backgroundColor: colors.blue

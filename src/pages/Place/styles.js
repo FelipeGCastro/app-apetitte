@@ -6,15 +6,13 @@ export const Container = styled.SafeAreaView`
   background: ${colors.background};
   justify-content: space-around;
   align-items: stretch;
-  padding: 10px 0;
 `
 export const PageText = styled.Text`
   margin-top: 15px;
-  font-size: 37px;
+  font-size: 40px;
   color: #fff;
   font-family: 'Usuazi-Hosomozi';
-  text-align: center;
-  padding: 0 20px;
+  text-align: center;+
 
 `
 export const FlatListContainer = styled.View`
