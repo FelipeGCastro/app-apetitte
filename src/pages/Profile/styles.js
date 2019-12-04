@@ -56,13 +56,11 @@ export const ProfileName = styled.Text`
   color: #fff;
   font-size: 22px;
   font-family: 'Usuazi-Hosomozi';
-  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
 `
 export const ProfilePoints = styled.Text`
   color: #fff;
   font-size: 24px;
   font-family: 'Usuazi-Hosomozi';
-  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   margin-top: 10px;
 `
 
@@ -76,37 +74,37 @@ export const PackageTitle = styled.Text`
   margin-top: 10px;
   margin-bottom: 10px;
   color: #fff;
-  font-size: 22;
+  font-size: 30px;
   font-family: 'Usuazi-Hosomozi';
-  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 export const PackagePart = styled.View`
   flex-direction: row;
   `
 export const PackageBox = styled.View`
+  flex: 1;
   border: solid 1px #fff;
   border-radius: 4px;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  margin:10px;
+  margin-right:10px;
   `
 export const PackageDays = styled.Text`
   color: #fff;
-  font-size: 30px;
+  font-size: 35px;
   font-family: 'Usuazi-Hosomozi';
-  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
+  text-align: center;
   `
 export const PackageAmount = styled.Text`
   color: #fff;
-  font-size: 19px;
+  font-size: 28px;
   font-family: 'Usuazi-Hosomozi';
-  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
+  text-align: center;
   `
 export const ChangePackage = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7
 })`
-  border: dashed 2px #fff;
+  box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   justify-content: center;
   align-items: center;
@@ -114,32 +112,30 @@ export const ChangePackage = styled.TouchableOpacity.attrs({
   margin:10px;
   width: 150px;
   elevation: 2;
-  background: ${colors.blue}
+  background-color: ${colors.blue};
   `
 export const ChangeText = styled.Text`
   color: #fff;
-  font-size: 22;
+  font-size: 35;
   font-family: 'Usuazi-Hosomozi';
-  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   text-align: center;
   `
 export const PackageCancel = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7
 })`
-  border: dashed 2px #fff;
   border-radius: 4px;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  margin:10px;
+  margin-top: 10;
   elevation: 2;
-  background: ${colors.blue}
+  background: ${colors.blue};
+  box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.1);
   `
 export const CancelText = styled.Text`
   color: #fff;
-  font-size: 22px;
+  font-size: 30px;
   font-family: 'Usuazi-Hosomozi';
-  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 
 export const PaymentContainer = styled.View`
@@ -151,9 +147,8 @@ export const PaymentTitle = styled.Text`
   margin-top: 10px;
   margin-bottom: 10px;
   color: #fff;
-  font-size: 22;
+  font-size: 30px;
   font-family: 'Usuazi-Hosomozi';
-  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 export const PaymentPart = styled.View`
   flex-direction: row;
@@ -169,20 +164,18 @@ export const PaymentBox = styled.View`
   `
 export const PaymentNumber = styled.Text`
   color: #fff;
-  font-size: 30px;
+  font-size: 35px;
   font-family: 'Usuazi-Hosomozi';
-  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 export const PaymentMode = styled.Text`
   color: #fff;
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Usuazi-Hosomozi';
-  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   `
 export const ChangePayment = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7
 })`
-  border: dashed 2px #fff;
+  box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   justify-content: center;
   align-items: center;
@@ -190,25 +183,24 @@ export const ChangePayment = styled.TouchableOpacity.attrs({
   margin:10px;
   width: 150px;
   elevation: 2;
-  background: ${colors.blue}
+  background: ${colors.blue};
   `
 export const ChangeTextPayment = styled.Text`
   color: #fff;
-  font-size: 22;
+  font-size: 30;
   font-family: 'Usuazi-Hosomozi';
-  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
   text-align: center;
-  line-height: 25
+  line-height: 32;
   `
 export const PaymentCancel = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7
 })`
-  border: dashed 2px #fff;
+box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   justify-content: center;
   align-items: center;
   margin:10px;
   padding: 15px;
   elevation: 2;
-  background: ${colors.blue}
+  background: ${colors.blue};
   `

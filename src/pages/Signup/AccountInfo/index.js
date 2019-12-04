@@ -22,6 +22,7 @@ export default class AccountInfo extends Component {
     name: '',
     email: '',
     password: null,
+    passwordConfirmation: null,
     animation: new Animated.Value(100),
     titleAnimation: new Animated.Value(100)
   }
@@ -34,13 +35,11 @@ export default class AccountInfo extends Component {
     Animated.stagger(400, [
       Animated.spring(this.state.animation, {
         toValue,
-        bounciness: 1,
-        speed: 1
+        bounciness: 7
       }),
       Animated.spring(this.state.titleAnimation, {
         toValue,
-        bounciness: 1,
-        speed: 1
+        bounciness: 7
       })
     ]).start()
   }
@@ -90,7 +89,7 @@ export default class AccountInfo extends Component {
   })
 
   render () {
-    const { name, email, password } = this.state
+    const { name, email, password, passwordConfirmation } = this.state
     return (
       <Container>
         <ScrollContainer
@@ -164,10 +163,10 @@ export default class AccountInfo extends Component {
               >
                 <PasswordInput
                   ref={(input) => {
-                    this.password = input
+                    this.passwordConfirmation = input
                   }}
-                  value={password}
-                  onChangeText={this.handleInputChange('password')}
+                  value={passwordConfirmation}
+                  onChangeText={this.handleInputChange('passwordConfirmation')}
                   autoCorrect={false}
                   placeholder='Confirmar Palavra-passe'
                   textContentType='password'

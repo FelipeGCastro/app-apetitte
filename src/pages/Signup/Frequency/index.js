@@ -5,16 +5,12 @@ import coxinha from '~/assets/coxinha.jpg'
 import croquete from '~/assets/croquete.jpg'
 import paodequeijo from '~/assets/paodequeijo.jpg'
 
-import ButtonNext from '~/components/ButtonNext'
+import { Card, ButtonNext } from '~/components'
 import {
   Container,
   PageText,
   FlatListContainer,
-  FrequencyContainer,
-  FrequencyBox,
-  FrequencyImage,
-  FrequencyDays,
-  FrequencyDescription
+  FrequencyContainer
 } from './styles'
 
 export default class Frequency extends Component {
@@ -68,14 +64,13 @@ export default class Frequency extends Component {
   renderItem= ({ item }) => {
     const { checked } = this.state
     return (
-      <FrequencyBox
-        onPress={this.handleCheckPress(item)}
-        checked={checked === item.id ? true : null}
-      >
-        <FrequencyImage source={item.image} resizeMode='cover' />
-        <FrequencyDays>{item.days}</FrequencyDays>
-        <FrequencyDescription>{item.description}</FrequencyDescription>
-      </FrequencyBox>
+      <Card
+        item={item}
+        checked={checked === item.id}
+        onCheckCard={this.handleCheckPress}
+        primaryText={item.days}
+        secundaryText={item.description}
+      />
     )
   };
 

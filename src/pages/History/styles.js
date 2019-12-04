@@ -16,7 +16,7 @@ elevation: 2;
 `
 export const HeaderName = styled.Text`
 color: #fff;
-font-size: 30;
+font-size: 35;
 font-family: 'Usuazi-Hosomozi';
 
 `

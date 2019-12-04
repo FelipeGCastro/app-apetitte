@@ -1,14 +1,16 @@
 import { createStackNavigator } from 'react-navigation'
 import { colors } from '~/styles'
 
-import Place from '~/pages/Place'
-import Frequency from '~/pages/Frequency'
-import AccountInfo from '~/pages/AccountInfo'
+import Place from '~/pages/Signup/Place'
+import Frequency from '~/pages/Signup/Frequency'
+import AccountInfo from '~/pages/Signup/AccountInfo'
+import Point from '~/pages/Signup/Point'
 
 const SignupPages = createStackNavigator({
   AccountInfo,
   Place,
-  Frequency
+  Frequency,
+  Point
 },
 {
   // initialRouteName: 'Schedule',

@@ -1,50 +1,42 @@
 import React, { Component } from 'react'
 import { Animated } from 'react-native'
-
-import colombo from '~/assets/colombo.jpg'
-import atrium from '~/assets/atrium-saldanha.jpg'
-import ButtonNext from '~/components/ButtonNext'
 import {
   Container,
   PageText,
   FlatListContainer,
-  PlaceContainer,
-  PlaceBox,
-  PlaceImage,
-  PlaceName,
-  PlaceDays,
-  PlaceHours
+  PointContainer
 } from './styles'
 
-export default class Place extends Component {
+import colombo from '~/assets/colombo.jpg'
+import atrium from '~/assets/atrium-saldanha.jpg'
+import { Card, ButtonNext } from '~/components'
+
+export default class Point extends Component {
   state = {
     places: [
       {
         id: 1,
         image: colombo,
-        name: 'Colombo',
-        days: 'Segunda, Quarta e Sexta',
-        hours: '9h e 16h'
+        name: 'Torre Ocidente',
+        days: 'Torre Ocidente'
       },
       {
         id: 2,
         image: atrium,
-        name: 'Atrium Saldanha',
-        days: 'Terça, Quinta e Sexta',
-        hours: '10h e 15h'
+        name: 'Torre Oriente',
+        days: 'Torre Oriente'
       },
       {
         id: 3,
         image: atrium,
-        name: 'AlfraPark',
-        days: 'Segunda a Sexta',
-        hours: '10h e 15h'
+        name: 'Dentro do Centro Comercial',
+        days: 'Segunda a Sexta'
       }
     ],
     animation: new Animated.Value(-150),
     boxOffset: new Animated.Value(100),
     checked: null
-  };
+  }
 
   componentDidMount = () => {
     Animated.parallel([
@@ -62,7 +54,7 @@ export default class Place extends Component {
     ]).start()
   }
 
-  handleCheckPlace = (item) => () => {
+  handleCheckPoint = (item) => () => {
     const { checked } = this.state
     this.setState({ checked: checked === item.id ? null : item.id })
   }
@@ -75,20 +67,18 @@ export default class Place extends Component {
   renderItem= ({ item }) => {
     const { checked } = this.state
     return (
-      <PlaceBox
-        onPress={this.handleCheckPlace(item)}
-        checked={checked === item.id ? true : null}
-      >
-        <PlaceImage source={item.image} resizeMode='cover' />
-        <PlaceName>{item.name}</PlaceName>
-        <PlaceDays>{item.days}</PlaceDays>
-        <PlaceHours>{item.hours}</PlaceHours>
-      </PlaceBox>
+      <Card
+        item={item}
+        checked={checked === item.id}
+        onCheckCard={this.handleCheckPoint}
+        primaryText={item.name}
+        secundaryText={item.days}
+      />
     )
   };
 
   render () {
-    const { places, checked } = this.state
+    const { checked, places } = this.state
     return (
       <Container>
         <Animated.View
@@ -98,7 +88,7 @@ export default class Place extends Component {
             ]
           }}
         >
-          <PageText>Primeiro Vamos decidir o lugar para sua entrega</PageText>
+          <PageText>Vamos decidir o Point a ser entregado</PageText>
         </Animated.View>
         <FlatListContainer>
           <Animated.View style={{
@@ -107,7 +97,7 @@ export default class Place extends Component {
             ]
           }}
           >
-            <PlaceContainer
+            <PointContainer
               data={places}
               horizontal
               showsHorizontalScrollIndicator={false}
@@ -116,8 +106,8 @@ export default class Place extends Component {
             />
           </Animated.View>
         </FlatListContainer>
-        <ButtonNext onPressFunction={this.handleNextPress} checked={checked} />
 
+        <ButtonNext onPressFunction={this.handleNextPress} checked={checked} />
       </Container>
     )
   }

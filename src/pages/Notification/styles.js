@@ -16,9 +16,8 @@ elevation: 2;
 `
 export const HeaderName = styled.Text`
 color: #fff;
-font-size: 30;
+font-size: 35;
 font-family: 'Usuazi-Hosomozi';
-
 `
 export const AlertContainer = styled.View`
 flex: 1;
@@ -28,18 +27,19 @@ padding: 10px;
 `
 
 export const AlertBox = styled.View`
+background-color: rgba(0, 0, 0, 0.2);
 border-width: 1px;
 border-color: #fff;
 border-style: solid;
 border-radius: 1;
 justify-content: center;
 align-items: center;
-padding: 20px;
+padding: 10px;
 `
 export const AlertText = styled.Text`
 color: #fff;
-font-size: 25;
+font-size: 30;
 font-family: 'Usuazi-Hosomozi';
 text-align: center;
-line-height: 27;
+line-height: 35;
 `
