@@ -6,17 +6,17 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import DaysActions from '~/store/ducks/days'
+import Icon from 'react-native-vector-icons/Feather'
 
-import Triplo from './Triplo'
+import Box from './Box'
+import Calendar from './Calendar'
 
 import {
   Container,
   HeaderContainer,
   HeaderName,
   PackageDays,
-  ExpireContainer,
-  ExpireText,
-  ExpireDate,
+  CalendarOrList,
   ScheduleContainer
 } from './styles'
 
@@ -25,65 +25,65 @@ class Schedule extends Component {
     header: null
   };
 
-  // state = {
-  //   days: [],
-  // };
+  state = {
+    calendar: null
+  };
 
   componentDidMount = async () => {
     const { loadRequest } = this.props
     await loadRequest()
   }
 
-  handleFoodPress = (dayId, productIndex) => {
-    const { navigation, user } = this.props
-    if (user.days !== 0) {
-      navigation.navigate('Food', { productIndex, dayId })
-    }
-  }
-
-  handleDrinkPress = (dayId, productIndex) => {
-    const { navigation, user } = this.props
-    if (user.days !== 0) {
-      navigation.navigate('Drink', { productIndex, dayId })
-    }
-  }
-
-  handleRemoveProduct = async (dayId, productIndex) => {
-    const { removeProduct } = this.props
-    await removeProduct(dayId, productIndex)
-  }
-
   renderItem = ({ item }) => {
-    const { user } = this.props
+    const { user, navigation, removeProduct } = this.props
     return (
-      <Triplo
+      <Box
         item={item}
         user={user}
-        onFoodPress={this.handleFoodPress}
-        onDrinkPress={this.handleDrinkPress}
-        onRemoveProduct={this.handleRemoveProduct}
+        navigation={navigation}
+        removeProduct={removeProduct}
       />)
   }
 
+  handleCalendarPress = (calendar) => () => {
+    this.setState({ calendar: !calendar })
+  }
+
   render () {
-    const { days, user } = this.props
+    const {
+      days,
+      user,
+      navigation,
+      removeProduct
+    } = this.props
+    const { calendar } = this.state
     return (
       <Container>
         <HeaderContainer>
           <HeaderName>Calendário</HeaderName>
           <PackageDays>{user.days} Dias</PackageDays>
-          <ExpireContainer>
-            <ExpireText>Expira</ExpireText>
-            <ExpireDate>{user.expireDate}</ExpireDate>
-          </ExpireContainer>
+          <CalendarOrList onPress={this.handleCalendarPress(calendar)}>
+            <Icon name={calendar ? 'list' : 'calendar'} size={32} color='#fff' />
+          </CalendarOrList>
         </HeaderContainer>
-        <ScheduleContainer
-          data={days}
-          showsHorizontalScrollIndicator={false}
-          showsVerticalScrollIndicator={false}
-          keyExtractor={(day) => day.id.toString()}
-          renderItem={this.renderItem}
-        />
+        {calendar ? (
+          <Calendar
+            item={days[0]}
+            user={user}
+            navigation={navigation}
+            removeProduct={removeProduct}
+          />
+        )
+          : (
+            <ScheduleContainer
+              data={days}
+              showsHorizontalScrollIndicator={false}
+              showsVerticalScrollIndicator={false}
+              keyExtractor={(day) => day.id.toString()}
+              renderItem={this.renderItem}
+            />
+          )}
+
       </Container>
     )
   }

@@ -29,20 +29,11 @@ export const PackageDays = styled.Text`
   font-family: 'Usuazi-Hosomozi';
 `
 
-export const ExpireContainer = styled.View`
+export const CalendarOrList = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7
+})`
   justify-content: center;
   align-items: center;
-`
-
-export const ExpireText = styled.Text`
-  color: #fff;
-  font-size: 24;
-  font-family: 'Usuazi-Hosomozi';
-`
-export const ExpireDate = styled.Text`
-  color: #fff;
-  font-size: 25;
-  font-family: 'Usuazi-Hosomozi';
 `
 
 export const ScheduleContainer = styled.FlatList`
