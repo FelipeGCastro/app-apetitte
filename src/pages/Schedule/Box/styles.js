@@ -1,5 +1,4 @@
 import styled from 'styled-components/native'
-import { Animated } from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { colors } from '~/styles'
 
@@ -51,29 +50,6 @@ export const StatusText = styled.Text`
   font-size: 16;
   font-family: 'Usuazi-Hosomozi';
 `
-
-export const DayBox = styled(Animated.View)`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  border-color: ${(props) => (props.status === 'pending'
-    ? colors.red : (props.status === 'complete')
-      ? colors.green : colors.white)};
-  border-style: solid;
-  border-width: 1;
-  background: ${colors.background};
-  padding: 10px;
-  margin-top: 20px;
-`
-
 export const IconPlus = styled(Icon)`
 align-self: center;
 `
-// ProductContainer,
-// ProductBox,
-// AddText,
-// ProductName,
-// DayStatus,
-// StatusText,
-// IconPlus,
-// DayBox

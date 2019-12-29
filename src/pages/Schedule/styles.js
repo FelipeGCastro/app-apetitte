@@ -38,5 +38,5 @@ export const CalendarOrList = styled.TouchableOpacity.attrs({
 
 export const ScheduleContainer = styled.FlatList`
   flex-grow: 1;
-  padding: 30px 10px 40px;
+  padding: 10px 10px 40px;
 `

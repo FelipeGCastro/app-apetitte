@@ -17,7 +17,8 @@ export const DayBox = styled(Animated.View)`
       ? colors.green : colors.white)};
   border-style: solid;
   border-width: 1;
-  background: ${colors.background};
+  border-radius: 4;
+  background-color: ${props => (props.status === 'complete') ? colors.green : colors.background};
   padding: 10px;
 `
 
@@ -33,14 +34,6 @@ export const ProductBox = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 `
-// ProductContainer,
-//   ProductBox,
-//   AddText,
-//   ProductName,
-//   // DayStatus,
-//   // StatusText,
-//   IconPlus,
-//   DayBox
 
 export const IconPlus = styled(Icon)`
 align-self: center;
@@ -52,14 +45,19 @@ export const AddText = styled.Text`
   font-family: 'Usuazi-Hosomozi';
 `
 
-export const ProductName = styled.Text`
+export const ProductNameContainer = styled.View`
   width: 100%;
+  font-family: 'Usuazi-Hosomozi';
+  margin-top: 5px;
+  padding: 2px;
+  background: ${colors.blue};
+  border-radius: 4;
+`
+
+export const ProductName = styled.Text`
   color: #fff;
   text-align: center;
   font-size: 25px;
   line-height: 30px;
   font-family: 'Usuazi-Hosomozi';
-  margin-top: 5px;
-  background: ${colors.blue};
-  border-radius: 1;
 `

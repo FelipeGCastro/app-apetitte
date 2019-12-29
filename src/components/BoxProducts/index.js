@@ -4,6 +4,7 @@ import {
   ProductContainer,
   ProductBox,
   AddText,
+  ProductNameContainer,
   ProductName,
   // DayStatus,
   // StatusText,
@@ -28,7 +29,9 @@ const BoxProducts = ({ item, checkProducts, user, removeProduct, navigation }) =
         <ProductBox onPress={() => handleFoodAndDrinkPress('Food', item.id, snackChoose)}>
           <AddText>Add</AddText>
         </ProductBox>
-        <ProductName>Snack</ProductName>
+        <ProductNameContainer>
+          <ProductName>Snack</ProductName>
+        </ProductNameContainer>
       </ProductContainer>
     )
   }
@@ -50,7 +53,9 @@ const BoxProducts = ({ item, checkProducts, user, removeProduct, navigation }) =
         <ProductBox onPress={() => handleFoodAndDrinkPress('Drink', item.id, 'drink')}>
           <AddText>Add</AddText>
         </ProductBox>
-        <ProductName>Bebida</ProductName>
+        <ProductNameContainer>
+          <ProductName>Bebida</ProductName>
+        </ProductNameContainer>
       </ProductContainer>
     )
   }

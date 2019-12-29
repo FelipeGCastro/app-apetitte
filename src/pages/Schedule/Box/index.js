@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React, { Component } from 'react'
-import { StyleSheet, Animated, Dimensions } from 'react-native'
+import { StyleSheet, Animated, Dimensions, View, Platform } from 'react-native'
 import PropTypes from 'prop-types'
 import { BoxProducts } from '~/components'
 
@@ -23,16 +23,18 @@ export default class Box extends Component {
 
   state = {
     animation: new Animated.Value(0),
-    expanded: false
+    expanded: false,
+    heightView: (widthScreen / 3) + 180
   }
 
   handleToggleExpand = () => {
     const { expanded } = this.state
     this.setState({ expanded: !expanded }, () => {
       const finalValue = this.state.expanded ? 100 : 0
-      Animated.spring(this.state.animation, {
+      Animated.timing(this.state.animation, {
         toValue: finalValue,
-        bounciness: 10
+        duration: 400
+        // bounciness: 10
       }).start()
     })
   }
@@ -51,30 +53,35 @@ export default class Box extends Component {
         : user.days === 0 && 'pending'
   }
 
-  render () {
-    const { expanded, animation } = this.state
-    const {
-      item,
-      user,
-      navigation,
-      removeProduct
-    } = this.props
-    const checkProducts = this.verification(item, user)
+handleGetHeight = (event) => {
+  const { height } = event.nativeEvent.layout
+  this.setState({ heightView: height })
+}
 
-    return (
-      <Animated.View style={[styles.container, {
-        height: animation.interpolate({
-          inputRange: [0, 100],
-          outputRange: [60, ((widthScreen) / 3) + 130]
-        })
-      }]}
-      >
-        <HeaderContainer onPress={this.handleToggleExpand}>
-          <DayName>{item.name}</DayName>
-          {this.renderStatusLabel(checkProducts)}
-          <IconPlus name={expanded ? 'up' : 'down'} size={25} color='#fff' />
-        </HeaderContainer>
+render () {
+  const { expanded, animation, heightView } = this.state
+  const {
+    item,
+    user,
+    navigation,
+    removeProduct
+  } = this.props
+  const checkProducts = this.verification(item, user)
+  return (
+    <Animated.View style={[styles.container, {
+      height: animation.interpolate({
+        inputRange: [0, 100],
+        outputRange: [60, heightView + 80]
+      })
+    }]}
+    >
+      <HeaderContainer onPress={this.handleToggleExpand}>
+        <DayName>{item.name}</DayName>
+        {this.renderStatusLabel(checkProducts)}
+        <IconPlus name={expanded ? 'up' : 'down'} size={25} color='#fff' />
+      </HeaderContainer>
 
+      <View onLayout={this.handleGetHeight}>
         <BoxProducts
           item={item}
           checkProducts={checkProducts}
@@ -82,9 +89,10 @@ export default class Box extends Component {
           navigation={navigation}
           removeProduct={removeProduct}
         />
-      </Animated.View>
-    )
-  }
+      </View>
+    </Animated.View>
+  )
+}
 }
 
 const styles = StyleSheet.create({
@@ -95,6 +103,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#fff',
-    overflow: 'scroll'
+    overflow: Platform.OS === 'ios' ? 'scroll' : 'hidden'
   }
 })

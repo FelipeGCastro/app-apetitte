@@ -39,8 +39,8 @@ export const ProductRemove = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7
 })`
   position: absolute;
-  right: -15;
-  top: -15;
+  right: -10;
+  top: -10;
   z-index: 5;
   elevation: 2;
   border-radius: 15px;
@@ -54,14 +54,19 @@ export const ProductImage = styled.Image`
   height: 100%;
   border-radius: 1;
 `
-export const ProductName = styled.Text`
+export const ProductNameContainer = styled.View`
   width: 100%;
+  font-family: 'Usuazi-Hosomozi';
+  margin-top: 5px;
+  padding: 2px;
+  background: ${colors.blue};
+  border-radius: 4;
+`
+
+export const ProductName = styled.Text`
   color: #fff;
   text-align: center;
   font-size: 25px;
   line-height: 30px;
   font-family: 'Usuazi-Hosomozi';
-  margin-top: 5px;
-  background: ${colors.blue};
-  border-radius: 4;
 `

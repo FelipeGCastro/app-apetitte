@@ -7,6 +7,7 @@ import {
   ProductRemove,
   IconClose,
   ProductImage,
+  ProductNameContainer,
   ProductName
 } from './styles'
 
@@ -14,14 +15,16 @@ const Product = ({ item, onRemoveProduct, name, product }) => (
   <ProductContainer>
     <ProductImageBox>
       <ProductRemove
-        hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
+        hitSlop={{ top: 5, bottom: 5, left: 5, right: 5 }}
         onPress={() => onRemoveProduct(item.id, name)}
       >
         <IconClose name='closecircle' size={30} color='#FF7777' />
       </ProductRemove>
       <ProductImage source={{ uri: product.image }} resizeMode='cover' />
     </ProductImageBox>
-    <ProductName>{product.name}</ProductName>
+    <ProductNameContainer>
+      <ProductName>{product.name}</ProductName>
+    </ProductNameContainer>
   </ProductContainer>
 )
 

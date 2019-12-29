@@ -10,7 +10,7 @@ const Header = ({ name, navigation }) => {
   return (
     <HeaderContainer>
       <BackButton
-        hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+        hitSlop={{ top: 5, bottom: 5, left: 5, right: 5 }}
         onPress={() => navigation.goBack()}
       >
         <Icon name='arrow-back' size={25} color='#fff' />
