@@ -10,7 +10,7 @@ export const Container = styled.SafeAreaView`
 `
 export const PageText = styled.Text`
   margin-top: 15px;
-  font-size: 40px;
+  font-size: 35px;
   color: #fff;
   font-family: 'Usuazi-Hosomozi';
   text-align: center;

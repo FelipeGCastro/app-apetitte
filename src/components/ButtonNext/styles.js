@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 
 export const NextButton = styled.TouchableOpacity`
   margin: 0 20px;
-  height: 60px;
+  height: 50px;
   justify-content: center;
   align-items: center;
   background: #71DFD3;
@@ -10,7 +10,7 @@ export const NextButton = styled.TouchableOpacity`
   border-radius: 8;
 `
 export const NextButtonText = styled.Text`
-  font-size: 40px;
+  font-size: 35px;
   color: #fff;
   font-family: 'Usuazi-Hosomozi';
 

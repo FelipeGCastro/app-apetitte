@@ -38,8 +38,6 @@ padding: 10px;
 `
 export const AlertText = styled.Text`
 color: #fff;
-font-size: 30;
-font-family: 'Usuazi-Hosomozi';
+font-size: 18;
 text-align: center;
-line-height: 35;
 `

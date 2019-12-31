@@ -40,7 +40,7 @@ export const LabelStatusContainer = styled.View`
   display: ${(props) => ((props.status !== 'pending' && props.status !== 'complete') ? 'none' : 'flex')};
   width: 15px;
   height: 15px;
-  border-radius: 8px;
+  border-radius: 6px;
   background-color: ${(props) => (props.status === 'pending'
     ? colors.red : (props.status === 'complete')
       ? colors.green : colors.white)};

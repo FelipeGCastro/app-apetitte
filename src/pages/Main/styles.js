@@ -21,37 +21,37 @@ export const LogoImage = styled.Image`
 export const EmailInput = styled.TextInput`
   height: 50px;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 6px;
   margin-bottom: 10px;
   padding: 0 15px;
   elevation: 2;
   color: ${colors.textSecundary};
-  font-size: 18;
+  font-size: 16;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 `
 export const PasswordInput = styled.TextInput`
   height: 50px;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 6px;
   margin-bottom: 15px;
   padding: 0 15px;
   elevation: 2;
   color: ${colors.softGray};
-  font-size: 18;
+  font-size: 16;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 `
 
 export const LoginButton = styled.TouchableOpacity`
-  height: 60px;
+  height: 50px;
   background: ${colors.green};
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 6px;
   margin-bottom: 30px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 `
 export const LoginButtonText = styled.Text`
-  font-size: 40px;
+  font-size: 35px;
   color: #fff;
   font-family: 'Usuazi-Hosomozi';
 `
@@ -71,7 +71,7 @@ export const ForgotPasswordButton = styled.TouchableOpacity.attrs({
   margin-right: 20px;
 `
 export const ForgotPasswordText = styled.Text`
-  font-size: 30px;
+  font-size: 25px;
   color: #fff;
   font-family: 'Usuazi-Hosomozi';
 `
@@ -86,7 +86,7 @@ export const SignUpButton = styled.TouchableOpacity.attrs({
   padding: 10px;
 `
 export const SignUpLink = styled.Text`
-  font-size: 30px;
+  font-size: 25px;
   color: #fff;
   font-family: 'Usuazi-Hosomozi';
 `

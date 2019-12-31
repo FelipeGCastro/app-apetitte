@@ -234,7 +234,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15
   },
   pageContainer: {
-    flex: 1
+    flex: 1,
+    paddingTop: 10
   },
   productsHeader: {
     flexDirection: 'row',
@@ -259,9 +260,12 @@ const styles = StyleSheet.create({
     paddingVertical: 10
   },
   statusLabel: {
-    width: 15,
-    height: 15,
-    borderRadius: 8,
+    flex: 1,
+    width: '85%',
+    maxHeight: 8,
+    borderRadius: 1.5,
+    borderWidth: 0.5,
+    borderColor: colors.white,
     alignSelf: 'center'
   },
   dayTitle: {
@@ -271,7 +275,8 @@ const styles = StyleSheet.create({
   },
   dayBox: {
     flex: 1,
-    borderRadius: 4
+    borderRadius: 4,
+    alignItems: 'stretch'
   },
   dayNumber: {
     fontSize: 18,

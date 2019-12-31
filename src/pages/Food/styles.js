@@ -10,7 +10,7 @@ export const FoodListContainer = styled.FlatList`
   `
 
 export const FoodContainer = styled.View`
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 `
 export const FoodCategory = styled.Text`
   color: #fff;

@@ -59,8 +59,9 @@ class Schedule extends Component {
 
   handleCalendarPress = (calendar) => () => {
     this.state.enterScreen.setValue(100)
-    this.setState({ calendar: !calendar })
-    this.renderAnimationEnterScreen()
+    this.setState({ calendar: !calendar }, () => {
+      this.renderAnimationEnterScreen()
+    })
   }
 
   render () {

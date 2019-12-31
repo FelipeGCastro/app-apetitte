@@ -8,9 +8,7 @@ import {
   PageContainer,
   ContainerBody,
   PagePrincipalText,
-  NameInput,
-  EmailInput,
-  PasswordInput,
+  SignUpInput,
   LoginButton,
   LoginButtonText,
   SignUpButton,
@@ -105,9 +103,9 @@ export default class AccountInfo extends Component {
               <Animated.View
                 style={this.handleRightAnimation(100, -100)}
               >
-                <NameInput
+                <SignUpInput
                   value={name}
-                  onChangeText={this.handleInputChange('email')}
+                  onChangeText={this.handleInputChange('name')}
                   autoCapitalize='none'
                   autoCorrect={false}
                   placeholder='Nome Completo'
@@ -123,7 +121,7 @@ export default class AccountInfo extends Component {
               <Animated.View
                 style={this.handleRightAnimation(160, -160)}
               >
-                <EmailInput
+                <SignUpInput
                   value={email}
                   onChangeText={this.handleInputChange('email')}
                   autoCapitalize='none'
@@ -141,7 +139,7 @@ export default class AccountInfo extends Component {
               <Animated.View
                 style={this.handleRightAnimation(220, -220)}
               >
-                <PasswordInput
+                <SignUpInput
                   ref={(input) => {
                     this.password = input
                   }}
@@ -161,7 +159,7 @@ export default class AccountInfo extends Component {
               <Animated.View
                 style={this.handleRightAnimation(280, -280)}
               >
-                <PasswordInput
+                <SignUpInput
                   ref={(input) => {
                     this.passwordConfirmation = input
                   }}
